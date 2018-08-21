@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>每日学习笔记(2018.8.2) | Whatever.</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="日常学习,日常," />
+  
+
+  <meta name="description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记大部分都只是所看的记录2018.8.2看《http 权威指南》;前端学习 《http 权威指南》第二章URL的语法简述 通过描述资源的位置来识别资源 是URI的子集(URI的子集还包括URN,通过名字来识别资源) URL提供了一种统一的资源命名方式大多数URL方案的URL语法都建立在这个由9部分构成的通用格式上: ://:@:/;?#/几乎没">
+<meta name="keywords" content="日常学习,日常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日学习笔记(2018.8.2)">
+<meta property="og:url" content="https://yixiaoer.github.io/2018/08/02/每日学习笔记(2018.8.2)/index.html">
+<meta property="og:site_name" content="Whatever.">
+<meta property="og:description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记大部分都只是所看的记录2018.8.2看《http 权威指南》;前端学习 《http 权威指南》第二章URL的语法简述 通过描述资源的位置来识别资源 是URI的子集(URI的子集还包括URN,通过名字来识别资源) URL提供了一种统一的资源命名方式大多数URL方案的URL语法都建立在这个由9部分构成的通用格式上: ://:@:/;?#/几乎没">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-06T12:12:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每日学习笔记(2018.8.2)">
+<meta name="twitter:description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记大部分都只是所看的记录2018.8.2看《http 权威指南》;前端学习 《http 权威指南》第二章URL的语法简述 通过描述资源的位置来识别资源 是URI的子集(URI的子集还包括URN,通过名字来识别资源) URL提供了一种统一的资源命名方式大多数URL方案的URL语法都建立在这个由9部分构成的通用格式上: ://:@:/;?#/几乎没">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">探索</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">探索</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/categories/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《http-权威指南》第二章"><span class="toc-text">《http 权威指南》第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#URL的语法"><span class="toc-text">URL的语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简述"><span class="toc-text">简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL的各种组件"><span class="toc-text">URL的各种组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL快捷方式"><span class="toc-text">URL快捷方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#相对URL"><span class="toc-text">相对URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL字符集"><span class="toc-text">URL字符集</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端学习"><span class="toc-text">前端学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tips"><span class="toc-text">Tips</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#今日感想"><span class="toc-text">今日感想</span></a></li></ol></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-每日学习笔记(2018.8.2)" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">每日学习笔记(2018.8.2)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.08.02</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Yixiaoer</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/我爱学习/">我爱学习</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://yixiaoer.github.io/2018/08/02/每日学习笔记(2018.8.2)/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><strong>每日学习笔记</strong><br>Web学习相关内容<br>前端后端学习记录/学习笔记<br>大部分都只是所看的记录<br><em>2018.8.2</em>看《http 权威指南》;前端学习</p>
+<h1 id="《http-权威指南》第二章"><a href="#《http-权威指南》第二章" class="headerlink" title="《http 权威指南》第二章"></a>《http 权威指南》第二章</h1><h2 id="URL的语法"><a href="#URL的语法" class="headerlink" title="URL的语法"></a>URL的语法</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><ul>
+<li>通过描述资源的位置来识别资源</li>
+<li>是URI的子集(URI的子集还包括URN,通过名字来识别资源)</li>
+<li>URL提供了一种统一的资源命名方式大多数URL方案的URL语法都建立在这个由9部分构成的通用格式上:<blockquote>
+<p><em><scheme>://<user>:<password>@<host>:<port>/<path></path>;<params>?<query>#<frag>/</frag></query></params></port></host></password></user></scheme></em><br>几乎没有哪个URL中包含了所有这些组件,URL中最重要的3个部分是方案(scheme)、主机(host)和路径(path)</p>
+</blockquote>
+<h3 id="URL的各种组件"><a href="#URL的各种组件" class="headerlink" title="URL的各种组件"></a>URL的各种组件</h3></li>
+<li>方案<ul>
+<li>规定如何访问指定资源的主要标识符,告诉负责解析URL的应用应该<strong><strong>使用什么协议</strong></strong>(e.g. http)</li>
+<li>可以告知 Web 客户端怎样访问资源,可以指向因特网上的任意资源或个人的Email 账户,或者通过其他协议(e.g. FTP协议)访问各种文件,或者从流视频服务器上下载电影</li>
+<li>大小写无关(e.g.HTTP与http是等价的)</li>
+</ul>
+</li>
+<li>主机与端口<ul>
+<li>对应了服务器的位置(e.g.  <a href="http://www.google.com),告知" target="_blank" rel="noopener">www.google.com),告知</a> Web 客户端资源位于何处</li>
+<li>主机组件标识了因特网上能够访问资源的宿主机器,可以用主机名或者IP地址来表示</li>
+<li>端口组件标识了服务器正在监听的网络端口,对下层使用了TCP协议的HTTP来说,默认端口号为80</li>
+</ul>
+</li>
+<li>用户名和密码<ul>
+<li>用户组件是某些方案访问资源是需要的用户名,默认值为匿名</li>
+<li>密码组件是用户名后面可能要包含的密码,中间由冒号(:)分隔,默认值为<email 地址=""></email></li>
+</ul>
+</li>
+<li>路径<ul>
+<li>说明了资源位于服务器的什么地方</li>
+<li>通常很像一个分级的文件系统路径</li>
+<li>可以用字符”/“将HTTP URL的路径组件划分为一些路径段,每个路径段都有自己的参数(param)组件</li>
+</ul>
+</li>
+<li>参数<ul>
+<li>由字符”;”将其与URL的其余部分(以及各名值对)分隔开来</li>
+<li>为应用程序提供了访问资源所需的所有附加信息</li>
+<li>查询字符串</li>
+<li>查询(query)组件在字符”?”的右边</li>
+<li>名值对之间用字符”&amp;”分隔</li>
+</ul>
+</li>
+<li>片段<ul>
+<li>有些资源类型(e.g.HTML)除资源级外,还可以做进一步的划分,为了引用部分资源或资源的一个片段,URL支持使用片段(frag)组件来表示一个资源内部的片段</li>
+<li>片段在URL的右边,前面有一个”#”字符</li>
+<li>服务器处理的是整个对象,URL片段仅由客户端使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="URL快捷方式"><a href="#URL快捷方式" class="headerlink" title="URL快捷方式"></a>URL快捷方式</h2><h3 id="相对URL"><a href="#相对URL" class="headerlink" title="相对URL"></a>相对URL</h3><ul>
+<li>URL有两种方式:<strong>相对的</strong>和<strong>绝对的</strong>,绝对URL中包含有访问资源所需的全部信息</li>
+<li>相对URL是不完整的,是URL的一种便捷缩略记法,要从相对URL中获取访问资源所需的全部信息,就必须相对于另一个,被称为其基础(base)的URL进行解析<ul>
+<li>转换处理相对URL<ul>
+<li>找到基础URL</li>
+<li>基础URL是作为相对URL的参考点使用的</li>
+<li>基础URL的来源<ul>
+<li>在资源中显式提供(显式地指定,直接标记)</li>
+<li>封装资源的基础URL</li>
+<li>没有基础URL<ul>
+<li>解析相对引用</li>
+<li>将相对URL和基础URL划分成组件段</li>
+<li>将相对URL转换成绝对URL</li>
+<li>自动拓展URL</li>
+<li>用户不需要输入完整的URL,浏览器会自动拓展</li>
+<li>两种方式(主机名拓展和历史拓展)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="URL字符集"><a href="#URL字符集" class="headerlink" title="URL字符集"></a>URL字符集</h3><h1 id="前端学习"><a href="#前端学习" class="headerlink" title="前端学习"></a>前端学习</h1><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li>去掉按钮按下之后的小蓝框{outline:none;}</li>
+<li>去掉文本框右下的小三角{resize:none;}</li>
+<li>js实现双击后更改文本内容</li>
+<li>dom操作添加button(这类)时,create的element是input,然后再xxx.type=”button”;</li>
+<li>text上不能接入onclick等事件,但文本框可以</li>
+</ul>
+<h4 id="今日感想"><a href="#今日感想" class="headerlink" title="今日感想"></a>今日感想</h4><p>我求我自己别懒了！</p>
+<p>我求我自己别逃避了！</p>
+<p>我求我自己别找借口了！</p>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/08/01/每日学习笔记(2018.8.1)/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/08/03/日常学习笔记(2018.8.3)/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/categories/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'https://yixiaoer.github.io/2018/08/02/每日学习笔记(2018.8.2)/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

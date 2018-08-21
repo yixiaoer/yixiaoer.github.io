@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>每日学习笔记(2018.8.3) | Whatever.</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="日常学习,日常," />
+  
+
+  <meta name="description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记大部分都只是所看的记录2018.8.3看《http 权威指南》 《http 权威指南》第三章关于报文 报文简述 如果说HTTP是因特网的信使,那么HTTP报文就是它用来搬东西的包裹 HTTP报文是在HTTP应用程序之间发送的、简单的格式化的数据块,这些数据块以一些文本形式的元信息(meta-information)开头,这些信息描述了报文的内">
+<meta name="keywords" content="日常学习,日常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日学习笔记(2018.8.3)">
+<meta property="og:url" content="https://yixiaoer.github.io/2018/08/03/日常学习笔记(2018.8.3)/index.html">
+<meta property="og:site_name" content="Whatever.">
+<meta property="og:description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记大部分都只是所看的记录2018.8.3看《http 权威指南》 《http 权威指南》第三章关于报文 报文简述 如果说HTTP是因特网的信使,那么HTTP报文就是它用来搬东西的包裹 HTTP报文是在HTTP应用程序之间发送的、简单的格式化的数据块,这些数据块以一些文本形式的元信息(meta-information)开头,这些信息描述了报文的内">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-06T12:12:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每日学习笔记(2018.8.3)">
+<meta name="twitter:description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记大部分都只是所看的记录2018.8.3看《http 权威指南》 《http 权威指南》第三章关于报文 报文简述 如果说HTTP是因特网的信使,那么HTTP报文就是它用来搬东西的包裹 HTTP报文是在HTTP应用程序之间发送的、简单的格式化的数据块,这些数据块以一些文本形式的元信息(meta-information)开头,这些信息描述了报文的内">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">探索</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">探索</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/categories/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《http-权威指南》第三章"><span class="toc-text">《http 权威指南》第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#报文简述"><span class="toc-text">报文简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#报文流"><span class="toc-text">报文流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#报文"><span class="toc-text">报文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#报文的组成部分"><span class="toc-text">报文的组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#报文的语法"><span class="toc-text">报文的语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#起始行"><span class="toc-text">起始行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态码"><span class="toc-text">状态码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#首部"><span class="toc-text">首部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实体"><span class="toc-text">实体</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-日常学习笔记(2018.8.3)" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">每日学习笔记(2018.8.3)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.08.03</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Yixiaoer</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/我爱学习/">我爱学习</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://yixiaoer.github.io/2018/08/03/日常学习笔记(2018.8.3)/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><strong>每日学习笔记</strong><br>Web学习相关内容<br>前端后端学习记录/学习笔记<br>大部分都只是所看的记录<br><em>2018.8.3</em>看《http 权威指南》</p>
+<h1 id="《http-权威指南》第三章"><a href="#《http-权威指南》第三章" class="headerlink" title="《http 权威指南》第三章"></a>《http 权威指南》第三章</h1><p>关于报文</p>
+<h2 id="报文简述"><a href="#报文简述" class="headerlink" title="报文简述"></a>报文简述</h2><ul>
+<li>如果说HTTP是因特网的信使,那么HTTP报文就是它用来搬东西的包裹</li>
+<li>HTTP报文是在HTTP应用程序之间发送的、简单的格式化的数据块,这些数据块以一些文本形式的元信息(meta-information)开头,这些信息描述了报文的内容和含义,后面跟着可选的数据部分</li>
+<li>报文在客户端、服务器和代理之间流动,”流入”、”流出”、”上游”、”下游”都是来描述报文方向的</li>
+<li>每条报文都包含一条来自客户端的请求,或者一条来自服务器的响应</li>
+<li>所有的报文可以分为两类:请求报文(request message,向Web 服务器请求一个动作)和响应报文(response message,将请求的结果返回给客户端)</li>
+</ul>
+<h2 id="报文流"><a href="#报文流" class="headerlink" title="报文流"></a>报文流</h2><ul>
+<li>报文流入源端服务器</li>
+<li>流入(inbound)和流出(outbound)来描述事务处理(transaction )的方向</li>
+<li>报文流入源端服务器,工作完成后,会流回用户的 Agent 代理中</li>
+<li>报文向下游流动</li>
+<li>不论是请求报文还是响应报文,所有报文都会向下游(downstream)流动</li>
+<li>所有报文的发送者都在接收者的上游(upstream)</li>
+</ul>
+<h2 id="报文"><a href="#报文" class="headerlink" title="报文"></a>报文</h2><h3 id="报文的组成部分"><a href="#报文的组成部分" class="headerlink" title="报文的组成部分"></a>报文的组成部分</h3><ul>
+<li>起始行(start line)<ul>
+<li>对报文进行描述,请求报文的起始行说明了要做些什么;响应报文的起始行说明发生了什么</li>
+<li>由行分隔的ASCII文本,每行都以一个由两个字符组成的行终止序列(一个回车符ASCII码13和一个换行符ASCII码10,可以写做CRLF)作为结束</li>
+<li>所有的HTTP报文都以一个起始行作为开始</li>
+</ul>
+</li>
+<li>首部(header)<ul>
+<li>包含属性</li>
+<li>本质上而言是一些名/值对的列表</li>
+<li>由行分隔的ASCII文本,每行都以一个由两个字符组成的行终止序列(一个回车符ASCII码13和一个换行符ASCII码10,可以写做CRLF)作为结束</li>
+<li>HTTP首部字段向请求和响应报文中添加了一些附加信息</li>
+<li>首部和方法配合工作,共同决定了客户端和服务器能做什么事情</li>
+</ul>
+</li>
+<li>主体(body)<ul>
+<li>可选的、包含数据</li>
+<li>可以包含文本或二进制数据,也可以为空</li>
+<li>主体是HTTP报文的负荷,即HTTP要传输的内容<h3 id="报文的语法"><a href="#报文的语法" class="headerlink" title="报文的语法"></a>报文的语法</h3></li>
+</ul>
+</li>
+<li><p>请求和响应报文的基本报文结构相同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">请求报文的格式</span><br><span class="line">&lt;method&gt;&lt;request-URL&gt;&lt;version&gt;</span><br><span class="line">&lt;header&gt;</span><br><span class="line">&lt;entity-body&gt;</span><br><span class="line"></span><br><span class="line">响应报文的格式</span><br><span class="line">&lt;version&gt;&lt;status&gt;&lt;reason-phrase&gt;</span><br><span class="line">&lt;header&gt;</span><br><span class="line">&lt;entity-body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对各部分的简要描述</p>
+<ul>
+<li>方法(method)<ul>
+<li>客户端希望服务器对资源执行的动作</li>
+<li>是一个单独的词</li>
+<li>具体方法<ul>
+<li>GET</li>
+<li>POST</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>请求URL(request-URL)<ul>
+<li>命名了所请求资源,或者URL路径组件的完整URL</li>
+<li>若直接与服务器进行对话,只要URL的路径组件是资源的绝对路径,通常不会有什么问题(服务器可以假定自己是URL的主机/端口)</li>
+</ul>
+</li>
+<li>版本(version)<ul>
+<li>报文所使用的HTTP版本,格式:HTTP/<major>.<minor></minor></major></li>
+<li>其中主要版本号(major)和次要版本号(minor)都是整数</li>
+</ul>
+</li>
+<li>状态码(status-code)<ul>
+<li>三位数字描述了请求过程中所发生的情况</li>
+<li>每个状态码的第一位数字都用于描述状态的一般类别(e.g.”成功”、”出错”等)</li>
+</ul>
+</li>
+<li>原因短语(reason-phrase)<ul>
+<li>数字状态码的可读版</li>
+<li>只对人类有意义</li>
+</ul>
+</li>
+<li>首部(header)<ul>
+<li>可以有零个或多个首部</li>
+<li>每个首部都包含一个名字,后面跟着一个冒号(:),然后是一个可选的空格,接着是一个值,最后是一个CRLF</li>
+<li>首部是由一个空格(CRLF)结束的,表示了首部列表的结束和实体主体部分的开始</li>
+<li>实体的主体部分(entity-body)15章具体描述，再来补充</li>
+<li>包含一个由任意数据组成的数据块</li>
+<li>并不是所有的报文都有实体的主体部分,有时报文只是以一个CRLF结束<h3 id="起始行"><a href="#起始行" class="headerlink" title="起始行"></a>起始行</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>请求行(请求报文的起始行)<ul>
+<li>请求报文请求服务器对资源进行一些操作</li>
+<li>包含了一个方法(描述了服务器应该执行的操作)和一个请求URL(描述了要对哪个资源执行这个方法),还包含HTTP的版本(告知服务器,客户端使用的是哪种HTTP)</li>
+<li>所有字符段都由空格符分隔</li>
+</ul>
+</li>
+<li>响应行(响应报文的起始行)<ul>
+<li>响应报文承载了状态信息和操作产生的所有结果数据,将其返回给客户端</li>
+<li>包含了响应报文使用的HTTP版本、数字状态码以及描述操作状态的文本形式的原因短语</li>
+<li>所有字段都由空格符进行分割<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3></li>
+</ul>
+</li>
+<li>请求的起始行以方法作为开始,方法用来告知服务器要做些什么</li>
+<li>安全方法<ul>
+<li>HTTP定义的一组被称为安全方法的方法</li>
+<li>使用安全方法的目的是当使用可能引发某一动作的不安全方法时,允许HTTP应用程序开发者通知用户</li>
+</ul>
+</li>
+<li>一组常用的HTTP方法<ul>
+<li>GET<ul>
+<li>最常用的方法,通常用于请求服务器发送某个资源</li>
+<li>从服务器中获取一份文档,不包含主体</li>
+</ul>
+</li>
+<li>HEAD<ul>
+<li>和GET方法很类似,但服务器在响应中只返回首部,不会返回实体的主体部分</li>
+<li>允许客户端在未获取实际资源的情况下,对资源的首部进行检查</li>
+<li>从服务器获取文档的首部,不包含主体</li>
+<li>常用于测试超链接的有效性,是否可以访问,以及最近是否更新,通过查看响应中的状态码看某个对象是否存在,查看首部来看资源是否被修改,在不获取资源的情况下了解其情况(e.g.判断其类型)</li>
+</ul>
+</li>
+<li>PUT<ul>
+<li>与GET从服务器读取文档相反, PUT方法会向服务器写入文档</li>
+<li>将请求的主体部分储存在服务器上,包含主体</li>
+<li>让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档,或者如果那个URL已经存在的话,就用这个主题来代替</li>
+<li>因为PUT允许用户对内容进行修改,很多 Web 服务器都要求在执行PUT前用密码登录</li>
+</ul>
+</li>
+<li>POST<ul>
+<li>起初是用来向服务器输入数据的,实际上会用它来支持HTML的表单</li>
+<li>向服务器发送需要处理的数据,包含主体</li>
+<li>支持HTML表单时,表单中填好的数据通常会被送给服务器,然后由服务器将其发送到它要去的地方</li>
+</ul>
+</li>
+<li>TRACE<ul>
+<li>客户端发送一个请求时可能要穿过防火墙、代理、网关或其他一些应用程序,中间每个节点都可能会修改原始HTTP请求,TRACE方法允许客户端在最终将请求发送给服务器时看看它变成了什么样子</li>
+<li>对可能经过代理服务器传送到服务器上的报文进行追踪,不包含主体</li>
+</ul>
+</li>
+<li>OPTIONS<ul>
+<li>请求WEB服务器告知其支持的各种功能</li>
+<li>决定可以在服务器上执行哪些方法,不包含主体</li>
+<li>为客户端应用程序提供了一种手段,使其不用实际访问那些资源就能判定访问各种资源的最优方式</li>
+</ul>
+</li>
+<li>DELETE<ul>
+<li>请服务器删除URL所制定的资源</li>
+<li>从服务器上删除一份文档,不包含主体</li>
+<li>客户端应用程序无法保证删除操作一定会被执行</li>
+</ul>
+</li>
+<li>扩展方法<ul>
+<li>HTTP被设计成字段可扩展,扩展放大指的是没有在HTTP/1.1规范中定义的方法</li>
+<li>即使服务器实现了所有这些方法,这些方法的使用很可能也是受限的,这些限制通常都是在服务器的配置中进行设置的,因此会随着站点和服务器的不同而有所不同<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>位于相应的起始行中,告诉客户端发生了什么事情</li>
+<li>状态码分类<ul>
+<li>1xx 信息性状态码</li>
+<li>2xx成功状态码</li>
+<li>3xx重定向状态码</li>
+<li>4xx客户端错误状态码</li>
+<li>5xx服务器错误状态码</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</a></li>
+<li><a href="https://blog.csdn.net/diandianxiyu_geek/article/details/50373195" target="_blank" rel="noopener">https://blog.csdn.net/diandianxiyu_geek/article/details/50373195</a></li>
+</ul>
+</li>
+<li>原因短语<ul>
+<li>响应起始行中的最后一个组件,为状态码提供了文本形式的解释</li>
+<li>原因短语与状态码是成对出现的,原因短语是状态码的可读版本</li>
+</ul>
+</li>
+<li>版本号<ul>
+<li>以HTTP/x.y的形式出现在请求和响应报文的起始中</li>
+<li>为HTTP应用程序提供了一种将自己所遵循的协议版本告知对方的方式</li>
+<li>使用版本号的目的是为使用HTTP的应用程序提供一种线索,以便互相了解对方的能力和报文格式</li>
+<li>版本号说明了应用程序支持的最高HTTP版本</li>
+<li>版本中点左右的每个数字都会被当作一个单独的数字来处理,在比较HTTP版本时每个数字都必须进行单独比较,以确定哪个版本更高(e.g.HTTP/2.22比HTTP/2.3的版本要高,因为22大于3)<h3 id="首部"><a href="#首部" class="headerlink" title="首部"></a>首部</h3></li>
+</ul>
+</li>
+<li>通用首部<ul>
+<li>既可以出现在请求报文中,也可以出现在响应报文中</li>
+<li>可以在客户端、服务器和其他应用程序之间提供一些非常有用的通用功能<ul>
+<li>通用信息性首部<ul>
+<li>Connection 允许客户端和服务器指定与请求/响应连接有关的选项</li>
+<li>Date 提供日期和时间标志,说明报文是何时创建的</li>
+<li>MIME-Version 给出了发送端使用的MIME版本</li>
+<li>Trailer 如果报文采用了分块传输编码(chunked transfer encoding)方式,就可以用这个首部列出位于报文拖挂(trailer)部分的首部集合</li>
+<li>Transfer-Encoding 告知接收端为了保证报文的可靠传输,对报文采用了什么编码方式</li>
+<li>Updating 给出了发送端可能想要”升级使用的新版本或协议</li>
+<li>Via 显示了报文经过的中间节点(代理、网关)</li>
+</ul>
+</li>
+<li>通用缓存首部<ul>
+<li>Cache-Control 用于随报文传送缓存指示</li>
+<li>Pragma 另一种随报文传送指示的方式,但并不专用于缓存(其确切语义未得到较好的定义,任何情况下Cache-Control的使用都优于它)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>请求首部<ul>
+<li>是请求报文特有的,为服务器提供更多有关请求的信息(e.g.客户端希望接受什么类型的数据)</li>
+<li>请求的信息性首部<ul>
+<li>Client-ip 提供了运行客户端的机器的IP地址</li>
+<li>From 提供了客户端用户的 Email 地址</li>
+<li>Host 给出了接受请求的服务器的主机名和端口号</li>
+<li>Referer 提供了包含当前请求URI的文档的URL</li>
+<li>UA-Color 提供了与客户端显示器的显示颜色有关的信息</li>
+<li>UA-CPU 给出了客户端CPU的类型或制造商</li>
+<li>UA-Disp 提供了与客户端显示器(屏幕)能力有关的信息</li>
+<li>UA-OS 给出了运行在客户端机器上的操作系统名称及版本</li>
+<li>UA-Pixels 提供了客户端显示器地像素信息</li>
+<li>User-Agent 将发起请求的应用程序名称告知服务器</li>
+</ul>
+</li>
+<li>Accept首部<ul>
+<li>为客户端提供了一种将其喜好和能力告知服务器的方式</li>
+<li>一些Accept 首部<ul>
+<li>Accept 告诉服务器嫩个够发送那些媒体类型</li>
+<li>Accept-Charset 告诉服务器能够发送哪些字符集</li>
+<li>Accept-Encoding 告诉服务器能够发送哪些编码方式</li>
+<li>Accept-Language 告诉服务器能够发送哪些语言</li>
+<li>TE 告诉服务器可以使用哪些扩展传输编码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>条件请求首部<ul>
+<li>有时客户端希望为请求加上某些限制,通过条件请求首部,客户端可以为请求加上这种限制,要求服务器在对请求进行响应之前,确保某个条件为真</li>
+<li>一些条件响应首部<ul>
+<li>Expect 允许客户端列出某请求所要求的服务器行为</li>
+<li>If-Match 如果实体标记与文档当前的实体标记相匹配,就获取这份文档</li>
+<li>If-Modified-Since 除非在某个指定的日期之后资源被修改过,否则就限制这个请求</li>
+<li>If-None-Match 如果提供的实体标记与当前的文档的实体标记不相符,就获取文档</li>
+<li>If-Range 允许对文档的某个范围进行条件请求</li>
+<li>If-Unmodified-Since 除非在某个指定日期之后资源没有被修改过,否则就限制这个请求</li>
+<li>Range 如果服务器支持范围请求,就请求资源的指定范围</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安全请求首部<ul>
+<li>客户端在获取特定的资源之前,先对自身进行认证,使事务稍微安全一些</li>
+<li>一些安全请求首部<ul>
+<li>Authorization 包含了客户端提供给服务器,以便对其自身进行认证的数据</li>
+<li>Cookie 客户端用它向服务器传送一个令牌,并非真正的安全首部,但确实隐含了安全功能</li>
+<li>Cookie2用来说明请求端支持的 cookie 版本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>代理请求首部<ul>
+<li>协助网络代理更好工作</li>
+<li>一些代理请求首部<ul>
+<li>Max-Forward 在通往源端服务器的路径上,将请求转发给其他代理或网关的最大次数(与TRACE方法一同使用)</li>
+<li>Proxy-Authorization 与Authorization 首部相同,但这个首部是在与代理进行认证时使用的</li>
+<li>Proxy-Connection 与Connection首部相同,但这个首部是在与代理建立连接时使用的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>响应首部<ul>
+<li>响应报文的首部集,为客户端提供更多有关响应的信息</li>
+<li>响应的信息性首部<ul>
+<li>Age (从最初创建开始)响应持续时间</li>
+<li>Public 服务器为其资源支持的请求方法列表</li>
+<li>Retry-After 如果资源不可用,在此日期或时间重试</li>
+<li>Server 服务器应用程序软件的名称和版本</li>
+<li>Title 对HTML文档来说,就是HTML文档的源端给出的标题</li>
+<li>Waring 比原因短语中更详细一些的警告报文</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>协商首部<ul>
+<li>传递与可协商资源有关的信息</li>
+<li>一些协商首部<ul>
+<li>Accept-Range 对此资源来说,服务器可接受的范围类型</li>
+<li>Vary 服务器查看的其他首部的列表,可能会使响应发生变化;这是一个首部列表,服务器会根据这些首部的内容,挑选出最适合的资源版本发送给客户端</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安全响应首部<ul>
+<li>HTTP的质询/响应认证机制的响应侧</li>
+<li>一些安全响应首部<ul>
+<li>Proxy-Authenticate 来自代理的对客户端的质询列表</li>
+<li>Set-Cookie 不是真正的安全首部,但因含有安全功能;可以在客户端设置一个令牌,以便服务器对客户端进行标识</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实体首部<ul>
+<li>对应实体主体部分的首部</li>
+<li>描述主体的长度和内容,或者资源自身</li>
+<li>实体的信息性首部<ul>
+<li>Allow 列出了可以对此实体执行的请求方法</li>
+<li>Location 告知客户端实体实际上位于何处;用于将接受断定想到资源的(可能是新的)位置(URL)上去</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内容首部<ul>
+<li>提供了与实体内容有关的信息</li>
+<li>一些内容首部<ul>
+<li>Content-Base 解析主体中的相对URL时使用的基础URL</li>
+<li>Content-Encoding 对主体执行的任意编码方式</li>
+<li>Content-Language 解析主体时最适宜使用的自然语言</li>
+<li>Content-Length 主体的长度或尺寸</li>
+<li>Content-Location 资源实际所处的位置</li>
+<li>Content-MD5 主体的MD5校验和</li>
+<li>Content-Range 在整个资源中此实体表示的字节范围</li>
+<li>Content-Type 这个主题的对象类型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实体缓存首部<ul>
+<li>通用的缓存首部说明了如何或什么时候进行缓存,实体的缓存首部提供了与被缓存实体有关的信息</li>
+<li>一些实体缓存首部<ul>
+<li>ETag 与此实体相关的实体标记</li>
+<li>Expires 实体不再有效,要从原始的源端再次获取此实体的日期和时间</li>
+<li>Last-Modified 这个实体最后一次被修改的日期和时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>扩展首部<ul>
+<li>规范中没有定义的新首部</li>
+<li>由开发者创建</li>
+<li>简单的语法，名字后面跟着冒号(:),然后跟上可选的空格,再跟上字值段,最后是一个CRLF</li>
+<li>首部延续行</li>
+<li>将长的首部行分为多行可以提高可读性,多出来的每行前面至少要有一个空格或制表符(tab)<h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3></li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/08/02/每日学习笔记(2018.8.2)/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/08/03/史上最强圣地巡礼,请pick你的选择/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/categories/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'https://yixiaoer.github.io/2018/08/03/日常学习笔记(2018.8.3)/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
