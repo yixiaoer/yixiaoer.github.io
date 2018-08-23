@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>每日学习笔记(2018.8.22) | Whatever.</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="日常学习,日常," />
+  
+
+  <meta name="description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记为C课设的学习准备大部分都只是所看的记录2018.8.22 C课设;《Go Web》与gin框架 关于Go标准命令行参考《Go命令教程》及《Go Web》中的Go命令部分 关于Go的部分命令 go bulid go build命令用于编译我们指定的源码文件或代码包以及它们的依赖包  如果在执行该命令时不后跟任何代码包,则命令将试图编译当前目录">
+<meta name="keywords" content="日常学习,日常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日学习笔记(2018.8.22)">
+<meta property="og:url" content="https://yixiaoer.github.io/2018/08/22/日常学习笔记(2018.8.22)/index.html">
+<meta property="og:site_name" content="Whatever.">
+<meta property="og:description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记为C课设的学习准备大部分都只是所看的记录2018.8.22 C课设;《Go Web》与gin框架 关于Go标准命令行参考《Go命令教程》及《Go Web》中的Go命令部分 关于Go的部分命令 go bulid go build命令用于编译我们指定的源码文件或代码包以及它们的依赖包  如果在执行该命令时不后跟任何代码包,则命令将试图编译当前目录">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-23T15:52:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每日学习笔记(2018.8.22)">
+<meta name="twitter:description" content="每日学习笔记Web学习相关内容前端后端学习记录/学习笔记为C课设的学习准备大部分都只是所看的记录2018.8.22 C课设;《Go Web》与gin框架 关于Go标准命令行参考《Go命令教程》及《Go Web》中的Go命令部分 关于Go的部分命令 go bulid go build命令用于编译我们指定的源码文件或代码包以及它们的依赖包  如果在执行该命令时不后跟任何代码包,则命令将试图编译当前目录">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">探索</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">探索</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于Go标准命令行"><span class="toc-text">关于Go标准命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#go-bulid"><span class="toc-text">go bulid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-install"><span class="toc-text">go install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-get"><span class="toc-text">go get</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-clean"><span class="toc-text">go clean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-env"><span class="toc-text">go env</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#《Go-Web》"><span class="toc-text">《Go Web》</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-日常学习笔记(2018.8.22)" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">每日学习笔记(2018.8.22)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.08.22</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Yixiaoer</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/我爱学习/">我爱学习</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><strong>每日学习笔记</strong><br>Web学习相关内容<br>前端后端学习记录/学习笔记<br>为C课设的学习准备<br>大部分都只是所看的记录<br><em>2018.8.22</em> C课设;《Go Web》与gin框架</p>
+<h1 id="关于Go标准命令行"><a href="#关于Go标准命令行" class="headerlink" title="关于Go标准命令行"></a>关于Go标准命令行</h1><p>参考<a href="https://github.com/hyper0x/go_command_tutorial/blob/master/SUMMARY.md" target="_blank" rel="noopener">《Go命令教程》</a>及《Go Web》中的Go命令部分</p>
+<p>关于Go的部分命令</p>
+<h2 id="go-bulid"><a href="#go-bulid" class="headerlink" title="go bulid"></a>go bulid</h2><ul>
+<li><p><code>go build</code>命令用于编译我们指定的源码文件或代码包以及它们的依赖包</p>
+</li>
+<li><p>如果在执行该命令时不后跟任何代码包,则命令将试图编译当前目录所对应的代码包</p>
+</li>
+<li><p><code>go bulid</code>命令的常用标记</p>
+<p>| 标记名称 | 标记描述                                                     |<br>| ——– | ———————————————————— |<br>| -a       | 强行对所有涉及到的代码包（包含标准库中的代码包）进行重新构建，即使它们已经是最新的了。 |<br>| -n       | 打印编译期间所用到的其它命令，但是并不真正执行它们。         |<br>| -p n     | 指定编译过程中执行各任务的并行数量（确切地说应该是并发数量）。在默认情况下，该数量等于CPU的逻辑核数。但是在<code>darwin/arm</code>平台（即iPhone和iPad所用的平台）下，该数量默认是<code>1</code>。 |<br>| -race    | 开启竞态条件的检测。不过此标记目前仅在<code>linux/amd64</code>、<code>freebsd/amd64</code>、<code>darwin/amd64</code>和<code>windows/amd64</code>平台下受到支持。 |<br>| -v       | 打印出那些被编译的代码包的名字。                             |<br>| -work    | 打印出编译时生成的临时工作目录的路径，并在编译结束时保留它。在默认情况下，编译结束时会删除该目录。 |<br>| -x       | 打印编译期间所用到的其它命令。注意它与<code>-n</code>标记的区别。       |</p>
+</li>
+<li><p>从代码包编译的角度来说,如果代码包A依赖代码包B,则称代码包B时代码包A的依赖代码包(简称依赖包)</p>
+</li>
+<li><p>关于Go语言的源码文件</p>
+<ul>
+<li>库源码文件:一般用于集中放置各种待被使用的程序实体(eg.全局常量、全局变量、接口、结构体、函数etc.)</li>
+<li><p>测试源码文件:主要用于对前两种源码文件中的程序实体的功能和性能进行测试,也可以用于展示前两者中程序的使用方法</p>
+</li>
+<li><p>命令源码文件:一般总是作为可执行的程序的入口</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="go-install"><a href="#go-install" class="headerlink" title="go install"></a>go install</h2><ul>
+<li><code>go install</code>命令用于编译并安装指定的代码包及它们的依赖包</li>
+<li><code>go install</code>比<code>go bulid</code>只多做了一件事,即安装编译后的结果文件到指定目录</li>
+</ul>
+<h2 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a>go get</h2><ul>
+<li><code>go get</code>命令可以根据要求和实际情况从互联网上下载或更新指定的代码包及其依赖包，并对它们进行编译和安装</li>
+</ul>
+<h2 id="go-clean"><a href="#go-clean" class="headerlink" title="go clean"></a>go clean</h2><ul>
+<li><code>go clean</code>命令会删除掉执行其它命令时产生的一些文件和目录</li>
+</ul>
+<h2 id="go-env"><a href="#go-env" class="headerlink" title="go env"></a>go env</h2><ul>
+<li><p><code>go env</code>命令用于打印 Go 语言的环境信息</p>
+</li>
+<li><p>打印出的这些信息</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CGO_ENABLED</td>
+<td>指明cgo工具是否可用的标识</td>
+</tr>
+<tr>
+<td>GOARCH</td>
+<td>程序构建环境的目标计算架构</td>
+</tr>
+<tr>
+<td>GOBIN</td>
+<td>存放可执行文件的目录的绝对路径</td>
+</tr>
+<tr>
+<td>GOCHAR</td>
+<td>程序构建环境的目标计算架构的单字符标识</td>
+</tr>
+<tr>
+<td>GOEXE</td>
+<td>可执行文件的后缀</td>
+</tr>
+<tr>
+<td>GOHOSTARCH</td>
+<td>程序运行环境的目标计算架构</td>
+</tr>
+<tr>
+<td>GOOS</td>
+<td>程序构建环境的目标操作系统</td>
+</tr>
+<tr>
+<td>GOHOSTOS</td>
+<td>程序运行环境的目标操作系统</td>
+</tr>
+<tr>
+<td>GOPATH</td>
+<td>工作区目录的绝对路径</td>
+</tr>
+<tr>
+<td>GORACE</td>
+<td>用于数据竞争检测的相关选项</td>
+</tr>
+<tr>
+<td>GOROOT</td>
+<td>Go语言的安装目录的绝对路径</td>
+</tr>
+<tr>
+<td>GOTOOLDIR</td>
+<td>Go工具目录的绝对路径</td>
+</tr>
+</tbody>
+</table>
+<h1 id="《Go-Web》"><a href="#《Go-Web》" class="headerlink" title="《Go Web》"></a>《Go Web》</h1><ul>
+<li><p>再次关于GOPATH</p>
+<ul>
+<li><p>GOPATH允许多个目录</p>
+</li>
+<li><p>$GOPATH目录约定有三个子目录,src目录是开发程序的主要目录</p>
+</li>
+<li>package的名称建议与目录名保持一致</li>
+</ul>
+</li>
+<li><p>之前部分的复习再回顾</p>
+</li>
+</ul>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
+<li><p>关于SDK</p>
+<ul>
+<li>Software Development Kit,SDK</li>
+<li>一般是一些用于为特定的软件包、软件框架、硬件平台、操作系统等创建应用软件的一些开发工具的集合</li>
+<li>和API的区别<ul>
+<li>API就是一个接口,任何知道如何使用这个接口的都可以去直接运用</li>
+<li>SDK由一些工具组成,可能可以包含一些API</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>VScode关于go语言的一些配置</p>
+<ul>
+<li><p>GOPATH路径改变</p>
+</li>
+<li><p>解决几个go插件的安装</p>
+<ul>
+<li><p>在vscode里下载不成功</p>
+<ul>
+<li><p>打开<code>%GOPATH%/src/golang.org/x</code></p>
+</li>
+<li><p>下载插件包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/golang/tools.git tools</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新进入进入“%GOPATH”目录,依次执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">go install github.com/ramya-rao-a/go-outline</span><br><span class="line"></span><br><span class="line">go install github.com/acroca/go-symbols</span><br><span class="line"></span><br><span class="line">go install golang.org/x/tools/cmd/guru</span><br><span class="line"></span><br><span class="line">go install golang.org/x/tools/cmd/gorename</span><br><span class="line"></span><br><span class="line">go install github.com/josharian/impl</span><br><span class="line"></span><br><span class="line">go install github.com/rogpeppe/godef</span><br><span class="line"></span><br><span class="line">go install github.com/sqs/goreturns</span><br><span class="line"></span><br><span class="line">go install github.com/golang/lint/golint</span><br><span class="line"></span><br><span class="line">go install github.com/cweill/gotests/gotests</span><br><span class="line"></span><br><span class="line">go install github.com/ramya-rao-a/go-outline</span><br><span class="line"></span><br><span class="line">go install github.com/acroca/go-symbols</span><br><span class="line"></span><br><span class="line">go install golang.org/x/tools/cmd/guru</span><br><span class="line"></span><br><span class="line">go install golang.org/x/tools/cmd/gorename</span><br><span class="line"></span><br><span class="line">go install github.com/josharian/impl</span><br><span class="line"></span><br><span class="line">go install github.com/rogpeppe/godef</span><br><span class="line"></span><br><span class="line">go install github.com/sqs/goreturns</span><br><span class="line"></span><br><span class="line">go install github.com/golang/lint/golint</span><br><span class="line"></span><br><span class="line">go install github.com/cweill/gotests/gotests</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果遇到<code>cannot find package</code></p>
+<p>先<code>git clone https://github.com/golang/xxxxxxxxxxxxx</code>复制其到<code>%GOPATH%\src\golang.org\x</code>目录下或者<code>go get -u github.com/xxxxxxxxxxx</code></p>
+<p>再执行<code>go install xxxxxxxx</code> </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>gin框架</p>
+<ul>
+<li>Download and install it:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> go get -u github.com/gin-gonic/gin</span><br></pre></td></tr></table></figure>
+<pre><code>Import it in your code:
+</code></pre><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"github.com/gin-gonic/gin"</span></span><br></pre></td></tr></table></figure>
+<pre><code>(Optional) Import `net/http`. This is required for example if using constants such as `http.StatusOK`
+</code></pre><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"net/http"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>use vendor<code>govendor</code><ul>
+<li>go get` govendor</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go get github.com/kardianos/govendor</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ul>
+<li>Create your project folder and <code>cd</code> inside</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p $GOPATH/src/github.com/myusername/project &amp;&amp; cd &quot;$_&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ul>
+<li>Vendor init your project and add gin</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ govendor init</span><br><span class="line">$ govendor fetch github.com/gin-gonic/gin@v1.3</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ul>
+<li>Copy a starting template inside your project</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://raw.githubusercontent.com/gin-gonic/gin/master/examples/basic/main.go &gt; main.go</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ul>
+<li>Run your project</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go run main.go</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/08/20/日常学习笔记(2018.8.20)/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/08/23/日常学习笔记(2018.8.23)/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
