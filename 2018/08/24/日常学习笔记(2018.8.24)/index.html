@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>每日学习笔记(2018.8.24) | Whatever.</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="日常学习,日常," />
+  
+
+  <meta name="description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.24 《Go Web》安全之前部分;redis安装及简单语法 《Go Web》Web服务 socket编程  套接字  在本地可以通过进程PID来唯一标识一个进程,但在网络中是行不通的,其实TCP/IP协议族已经解决了这个问题,网络层的”ip地址”可以唯一标识网络中的主机,而传输层的“协议+端口”可以唯一标识主机中的应用程序(进程)">
+<meta name="keywords" content="日常学习,日常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日学习笔记(2018.8.24)">
+<meta property="og:url" content="https://yixiaoer.github.io/2018/08/24/日常学习笔记(2018.8.24)/index.html">
+<meta property="og:site_name" content="Whatever.">
+<meta property="og:description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.24 《Go Web》安全之前部分;redis安装及简单语法 《Go Web》Web服务 socket编程  套接字  在本地可以通过进程PID来唯一标识一个进程,但在网络中是行不通的,其实TCP/IP协议族已经解决了这个问题,网络层的”ip地址”可以唯一标识网络中的主机,而传输层的“协议+端口”可以唯一标识主机中的应用程序(进程)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-30T15:40:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每日学习笔记(2018.8.24)">
+<meta name="twitter:description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.24 《Go Web》安全之前部分;redis安装及简单语法 《Go Web》Web服务 socket编程  套接字  在本地可以通过进程PID来唯一标识一个进程,但在网络中是行不通的,其实TCP/IP协议族已经解决了这个问题,网络层的”ip地址”可以唯一标识网络中的主机,而传输层的“协议+端口”可以唯一标识主机中的应用程序(进程)">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">探索</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">探索</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《Go-Web》"><span class="toc-text">《Go Web》</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web服务"><span class="toc-text">Web服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全与加密"><span class="toc-text">安全与加密</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis"><span class="toc-text">Redis</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-日常学习笔记(2018.8.24)" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">每日学习笔记(2018.8.24)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.08.24</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Yixiaoer</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/我爱学习/">我爱学习</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><strong>每日学习笔记</strong><br>Web学习相关内容<br>大部分都只是所看的记录<br><em>2018.8.24</em> 《Go Web》安全之前部分;redis安装及简单语法</p>
+<h1 id="《Go-Web》"><a href="#《Go-Web》" class="headerlink" title="《Go Web》"></a>《Go Web》</h1><h2 id="Web服务"><a href="#Web服务" class="headerlink" title="Web服务"></a>Web服务</h2><ul>
+<li><p>socket编程</p>
+<ul>
+<li><p>套接字</p>
+</li>
+<li><p>在本地可以通过进程PID来唯一标识一个进程,但在网络中是行不通的,其实TCP/IP协议族已经解决了这个问题,网络层的”ip地址”可以唯一标识网络中的主机,而传输层的“协议+端口”可以唯一标识主机中的应用程序(进程),这样利用三元组(ip地址,协议,端口)就可以标识网络的进程,网络中需要互相通信的进程,可以利用这个标志在他们之间进行交互</p>
+</li>
+<li><p>一种操作系统提供的进程间通信机制,在操作系统中,通常会为应用程序提供一组应用程序接口(API),称为<strong>套接字接口</strong>(socket API)。应用程序可以通过套接字接口,来使用网络套接字,以进行数据交换</p>
+</li>
+<li><p>socket是在应用层和传输层之间的一个抽象层,它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信</p>
+</li>
+<li><p>起源于UNIX,在Unix一切皆文件哲学的思想下,socket是一种”打开➡️读/写➡️关闭”模式的实现,服务器和客户端各自维护一个”文件”,在建立连接打开后,可以向自己文件写入内容供对方读取或者读取对方内容,通讯结束时关闭文件</p>
+</li>
+<li><p>TCP/IP是socket的一种实现,socket是对TCP/IP协议的封装,Socket本身并不是协议,而是一个调用接口(API)通过Socket,才能使用TCP/IP协议,Socket跟TCP/IP协议没有必然的联系,Socket编程接口在设计的时候,就希望也能适应其他的网络协议</p>
+</li>
+<li><p>Socket的出现只是使得TCP/IP协议栈更方便地使用,它是对TCP/IP协议的抽,从而形成了一些最基本的函数接口(eg.create,listen,connect,accept,send,read,write,etc.)</p>
+<p>关于<a href="http://lib.csdn.net/article/computernetworks/20534" target="_blank" rel="noopener">TCP/IP、Http、Socket的区别</a></p>
+</li>
+<li><p>流程</p>
+<p>建立Socket连接至少需要一对套接字,其中一个运行于客户端,称为ClientSocket ;另一个运行于服务器端,称为ServerSocket</p>
+<p>套接字之间的连接过程分为三个步骤:</p>
+<ul>
+<li><strong>服务器监听</strong>:服务器端套接字并不定位具体的客户端套接字,而是处于等待连接的状态,实时监控网络状态,等待客户端的连接请求</li>
+<li><strong>客户端请求</strong>:客户端的套接字提出连接请求,要连接的目标是服务器端的套接字。为此,客户端的套接字必须首先描述它要连接的服务器的套接字,指出服务器端套接字的地址和端口号,然后就向服务器端套接字提出连接请求</li>
+<li><strong>连接确认</strong>:当服务器端套接字监听到或者说接收到客户端套接字的连接请求时,就响应客户端套接字的请求,建立一个新的线程,把服务器端套接字的描述发给客户端,一旦客户端确认了此描述,双方就正式建立连接。而服务器端套接字继续处于监听状态,继续接收其他客户端套接字的连接请求</li>
+</ul>
+</li>
+<li><p>关于TCP连接的三次握手</p>
+<p>第一次握手：客户端尝试连接服务器，向服务器发送syn包（同步序列编号<strong>*Synchronize Sequence Numbers*</strong>），syn=j，客户端进入SYN_SEND状态等待服务器确认</p>
+<p>第二次握手：服务器接收客户端syn包并确认（ack=j+1），同时向客户端发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态</p>
+<p>第三次握手：第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1），此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手</p>
+</li>
+<li><p>两种socket</p>
+<p>TCP和UDP是协议,而要确定一个进程的需要三元组,IP地址和端口</p>
+<ul>
+<li>TCP Socket</li>
+<li>UDP Socke</li>
+</ul>
+</li>
+<li><p>Go语言中</p>
+<ul>
+<li><p>在Go的<code>net</code>包中定义了很多类型、函数和方法用来网络编程，其中IP的定义如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> IP []<span class="keyword">byte</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ParseIP(s string) IP</code>函数会把一个IPv4或者IPv6的地址转化成IP类型</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"net"</span></span><br><span class="line">    <span class="string">"os"</span></span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(os.Args) != <span class="number">2</span> &#123;</span><br><span class="line">        fmt.Fprintf(os.Stderr, <span class="string">"Usage: %s ip-addr\n"</span>, os.Args[<span class="number">0</span>])</span><br><span class="line">        <span class="comment">//os可以通过变量Args来获取命令参数，os.Args返回一个字符串数组，其中第一个参数就是执行文件本身</span></span><br><span class="line">        os.Exit(<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    name := os.Args[<span class="number">1</span>]</span><br><span class="line">    addr := net.ParseIP(name)</span><br><span class="line">    <span class="keyword">if</span> addr == <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">"Invalid address"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">"The address is "</span>, addr.String())</span><br><span class="line">    &#125;</span><br><span class="line">    os.Exit(<span class="number">0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>REST</p>
+<ul>
+<li><p>REpresentational State Transfer</p>
+<ul>
+<li><strong>资源(Resources)</strong>:REST是”表现层状态转化”,其实它省略了主语,表现层”其实指的是”资源”的”表现层”。资源是上网访问的一张图片、一个文档、一个视频等。这些资源通过URI来定位,也就是一个URI表示一个资源</li>
+<li><strong>表现层(Representation)</strong>:资源是做一个具体的实体信息,可有多种展现方式。而把实体展现出来就是表现层(eg.一个txt文本信息,输出成html、json、xml等格式;一个图片以jpg、png等方式展现)。URI确定一个资源,确定它的具体表现形式应在HTTP请求的头信息中用Accept和Content-Type字段指定,这两个字段是对”表现层”的描述</li>
+<li><strong>状态转化(State Transfer)</strong>:访问一个网站,就代表了客户端和服务器的一个互动过程。在这个过程中,涉及到数据和状态的变化,而HTTP协议是无状态的,则这些状态保存在服务器端,所以如果客户端想要通知服务器端改变数据和状态的变化,需要通过某种方式来通知,客户端能通知服务器端的手段,只能是HTTP协议。具体来说,就是HTTP协议里面四个表示操作方式的动词:GET(获取资源)、POST(新建资源或更新资源)、PUT(更新资源)、DELETE(删除资源)</li>
+</ul>
+</li>
+<li><p>RESTful架构:</p>
+<ul>
+<li>每一个URI代表一种资源</li>
+</ul>
+<ul>
+<li>客户端和服务器之间,传递这种资源的某种表现层</li>
+<li>客户端通过四个HTTP动词,对服务器端资源进行操作,实现”表现层状态转化”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>RPC</p>
+<ul>
+<li>实现函数调用模式的网络化</li>
+<li>运行时,一次客户机对服务器的RPC调用,其内部操作大致有如下十步：<ol>
+<li>调用客户端句柄；执行传送参数</li>
+<li>调用本地系统内核发送网络消息</li>
+<li>消息传送到远程主机</li>
+<li>服务器句柄得到消息并取得参数</li>
+<li>执行远程过程</li>
+<li>执行的过程将结果返回服务器句柄</li>
+<li>服务器句柄返回结果，调用远程系统内核</li>
+<li>消息传回本地主机</li>
+<li>客户句柄由内核接收消息</li>
+<li>客户接收句柄返回的数据</li>
+</ol>
+</li>
+<li>Json RPC</li>
+</ul>
+</li>
+</ul>
+<h2 id="安全与加密"><a href="#安全与加密" class="headerlink" title="安全与加密"></a>安全与加密</h2><ul>
+<li><p>预防CSRF攻击</p>
+<ul>
+<li><p>CSRF(Cross-site request forgery),跨站请求伪造,也被称为one click attack/session riding(CSRF/XSRF)</p>
+</li>
+<li><p>完成一次CSRF攻击受害者必须依次完成两个步骤</p>
+<ol>
+<li><p>登录受信任网站A，并在本地生成Cookie </p>
+</li>
+<li><p>在不退出A的情况下，访问危险网站B</p>
+</li>
+</ol>
+</li>
+<li><p>CSRF攻击主要是因为Web的隐式身份验证机制,Web的身份验证机制虽然可以保证一个请求是来自于某个用户的浏览器,但却无法保证该请求是用户批准发送的</p>
+</li>
+<li><p>预防CSRF</p>
+<p>CSRF的防御可以从服务端和客户端两方面着手,防御效果是从服务端着手效果比较好,现在一般的CSRF防御也都在服务端进行</p>
+<p>服务端的预防CSRF攻击的方式方法多种多样,但思想差不多的,主要从以下2个方面入手</p>
+<ul>
+<li><p>正确使用GET,POST和Cookie</p>
+</li>
+<li><p>在非GET请求中增加伪随机数</p>
+<ul>
+<li><p>为每个用户生成一个唯一的cookie token,所有表单都包含同一个伪随机值,这种方案最简单,因为攻击者不能获得第三方的Cookie(理论上),所以表单中的数据也就构造失败,但是由于用户的Cookie很容易由于网站的XSS漏洞而被盗取所以这个方案必须要在没有XSS的情况下才安全</p>
+</li>
+<li><p>每个请求使用验证码,这个方案是完美的,但因为要多次输入验证码,用户友好性很差,因此不适合实际运用</p>
+</li>
+<li><p>不同的表单包含一个不同的伪随机值,复用相关代码，实现如下：</p>
+<p>生成随机数token</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">h := md5.New()</span><br><span class="line">io.WriteString(h, strconv.FormatInt(crutime, 10))</span><br><span class="line">io.WriteString(h, &quot;ganraomaxxxxxxxxx&quot;)</span><br><span class="line">token := fmt.Sprintf(&quot;%x&quot;, h.Sum(nil))</span><br><span class="line"></span><br><span class="line">t, _ := template.ParseFiles(&quot;login.gtpl&quot;)</span><br><span class="line">t.Execute(w, token)</span><br></pre></td></tr></table></figure>
+<p>输出token</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;&#123;&#123;.&#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>验证token</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r.ParseForm()</span><br><span class="line">token := r.Form.Get(&quot;token&quot;)</span><br><span class="line">if token != &quot;&quot; &#123;</span><br><span class="line">    //验证token的合法性</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    //不存在token报错</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样基本就实现了安全的POST,因为实际上破解是基本不可能的,暴力破解该串大概需要2的11次方时间</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>确保输入过滤</p>
+<ul>
+<li><p>过滤用户数据是Web应用安全的基础,是验证数据合法性的过程。通过对所有的输入数据进行过滤,可以避免恶意数据在程序中被误信或误用</p>
+</li>
+<li><p>大多数Web应用的漏洞都是因为没有对用户输入的数据进行恰当过滤所引起的</p>
+</li>
+<li><p>过滤数据的三个步骤</p>
+<ol>
+<li><p>识别数据</p>
+<ul>
+<li>弄清楚需要过滤的数据来自于哪里</li>
+<li>由用户输入的数据通过Go非常容易识别,Go通过<code>r.ParseForm</code>之后,把用户POST和GET的数据全部放在了<code>r.Form</code>里面</li>
+<li>其它的输入要难识别得多(eg.<code>r.Header</code>中的很多元素是由客户端所操纵的),常常很难确认其中的哪些元素组成了输入,因此最好的方法是把里面所有的数据都看成是用户输入</li>
+</ul>
+</li>
+<li><p>过滤数据</p>
+<ul>
+<li>弄明白需要什么样的数据,防止非法数据进入</li>
+<li>最好的方法是把过滤看成是一个检查的过程,在使用数据之前都检查一下看它们是否是符合合法数据的要求。且不要试图好心地去纠正非法数据,而要让用户按制定的规则去输入数据。历史证明了试图纠正非法数据往往会导致安全漏洞</li>
+<li>过滤数据主要采用如下一些库来操作<ul>
+<li>strconv包下面的字符串转化相关函数,因为从Request中的<code>r.Form</code>返回的是字符串,而有些时候需要将之转化成整/浮点数,<code>Atoi</code>、<code>ParseBool</code>、<code>ParseFloat</code>、<code>ParseInt</code>等函数就可以派上用场</li>
+<li>string包下面的一些过滤函数<code>Trim</code>、<code>ToLower</code>、<code>ToTitle</code>等函数,能够帮助按照指定的格式获取信息</li>
+<li>regexp包用来处理一些复杂的需求(eg.判定输入是否是Email、生日之类)</li>
+</ul>
+</li>
+<li>过滤数据除了检查验证之外,在特殊时候,还可以采用白名单(假定你正在检查的数据都是非法的,除非能证明它是合法的),使用这个方法,如果出现错误,只会导致把合法的数据当成是非法的,而不会是相反,尽管不想犯任何错误,但总比把非法数据当成合法数据要安全得多</li>
+</ul>
+</li>
+<li><p>区分已过滤及被污染数据</p>
+<ul>
+<li><p>如果存在攻击数据那么保证过滤之后可使用更安全的数据</p>
+</li>
+<li><p>在编写Web应用的时候需要区分已过滤和被污染数据,因而保证过滤数据的完整性,而不影响输入的数据</p>
+</li>
+<li><p>约定把所有经过过滤的数据放入一个叫全局的Map变量中(CleanMap),这时需要用两个重要的步骤来防止被污染数据的注入</p>
+<ul>
+<li>每个请求都要初始化CleanMap为一个空Map</li>
+<li>加入检查及阻止来自外部数据源的变量命名为CleanMap</li>
+</ul>
+<p>如下例</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"/whoami"</span> method=<span class="string">"POST"</span>&gt;</span><br><span class="line">    我是谁:</span><br><span class="line">    &lt;<span class="keyword">select</span> name=<span class="string">"name"</span>&gt;</span><br><span class="line">        &lt;option value="astaxie"&gt;astaxie&lt;/option&gt;</span><br><span class="line">        &lt;option value="herry"&gt;herry&lt;/option&gt;</span><br><span class="line">        &lt;option value="marry"&gt;marry&lt;/option&gt;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    &lt;input <span class="keyword">type</span>=<span class="string">"submit"</span> /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>在处理这个表单的编程逻辑中,非常容易犯的错误是认为只能提交三个选择中的一个。其实攻击者可以模拟POST操作,递交<code>name=attack</code>这样的数据,所以在此时需要做类似白名单的处理</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">r.ParseForm()</span><br><span class="line">name := r.Form.Get(<span class="string">"name"</span>)</span><br><span class="line">CleanMap := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> name == <span class="string">"a"</span> || name == <span class="string">"herry"</span> || name == <span class="string">"marry"</span> &#123;</span><br><span class="line">    CleanMap[<span class="string">"name"</span>] = name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中初始化了一个CleanMap的变量,当判断获取的name是<code>a</code>、<code>herry</code>、<code>marry</code>三个中的一个之后 ，把数据存储到了CleanMap之中，这样就可以确保CleanMap[“name”]中的数据是合法的,从而在代码的其它部分使用它。当然还可以在else部分增加非法数据的处理,一种可能是再次显示表单并提示错误。但是不要试图为了友好而输出被污染的数据</p>
+<p>上面的方法对于过滤一组已知的合法值的数据很有效,但是对于过滤有一组已知合法字符组成的数据时就没有什么帮助。</p>
+<p>例如，可能需要一个用户名只能由字母及数字组成：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">r.ParseForm()</span><br><span class="line">username := r.Form.Get(<span class="string">"username"</span>)</span><br><span class="line">CleanMap := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> ok, _ := regexp.MatchString(<span class="string">"^[a-zA-Z0-9].$"</span>, username); ok &#123;</span><br><span class="line">    CleanMap[<span class="string">"username"</span>] = username</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>避免XSS攻击</p>
+<ul>
+<li>动态内容,是应用程序能够根据用户环境和用户请求,输出相应的内容。动态站点会受到一种名为跨站脚本攻击”(Cross Site Scripting, XSS)的威胁,而静态站点则完全不受其影响</li>
+<li>XSS允许攻击者将恶意代码植入到提供给其它用户使用的页面中,不同于大多数攻击(一般只涉及攻击者和受害者),其涉及到三方,即攻击者、客户端与Web应用</li>
+<li>XSS的攻击目标是为了盗取存储在客户端的cookie或者其他网站用于识别客户端身份的敏感信息。一旦获取到合法用户的信息,攻击者甚至可以假冒合法用户与网站进行交互</li>
+<li>两大类<ul>
+<li>存储型XSS<ul>
+<li>主要出现在让用户输入数据,供其他浏览此页的用户进行查看的地方(eg.留言,评论,博客,日志,各类表单etc.)</li>
+<li>应用程序从数据库中查询数据,在页面中显示出来,攻击者在相关页面输入恶意的脚本数据后,用户浏览此类页面时就可能受到攻击</li>
+<li>这个流程简单可以描述为:恶意用户的Html输入Web程序-&gt;进入数据库-&gt;Web程序-&gt;用户浏览器</li>
+</ul>
+</li>
+<li>反射型XSS<ul>
+<li>将脚本代码加入URL地址的请求参数里</li>
+<li>请求参数进入程序后在页面直接输出</li>
+<li>用户点击类似的恶意链接就可能受到攻击</li>
+</ul>
+</li>
+<li>XSS目前主要的手段和目的如下<ul>
+<li>盗用cookie,获取敏感信息</li>
+<li>利用植入Flash,通过crossdomain权限设置进一步获取更高权限;或者利用Java等得到类似的操作</li>
+<li>利用iframe、frame、XMLHttpRequest或上述Flash等方式,以（被攻击者）用户的身份执行一些管理动作,或执行一些常规操作(eg:发微博,加好友,发私信,etc.)</li>
+<li>利用可被攻击的域受到其他域信任的特点,以受信任来源的身份请求一些平时不允许的操作(eg.进行不当的投票活动)</li>
+<li>在访问量极大的一些页面上的XSS可以攻击一些小型网站,实现DDoS攻击的效果</li>
+</ul>
+</li>
+<li>原理<ul>
+<li>Web应用未对用户提交请求的数据做充分的检查过滤,允许用户在提交的数据中掺入HTML代码(最主要的是“&gt;”、“&lt;”),并将未经转义的恶意代码输出到第三方用户的浏览器解释执行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>避免SQL注入</p>
+</li>
+<li><p>存储密码</p>
+</li>
+<li><p>加密和解密数据</p>
+</li>
+</ul>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><ul>
+<li><p>关于Redis</p>
+<ul>
+<li><p>Redis是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的键值对存储数据库</p>
+</li>
+<li><p>Redis的外围由一个键、值映射的字典构成,与其他非关系型数据库主要不同在于：Redis中值的类型不仅限于字符串,还支持如下抽象数据类型:</p>
+<ul>
+<li>字符串列表</li>
+<li>无序不重复的字符串集合</li>
+<li>有序不重复的字符串集合</li>
+<li>键、值都为字符串的哈希表</li>
+</ul>
+<p>值的类型决定了值本身支持的操作。Redis支持不同无序、有序的列表，无序、有序的集合间的交集、并集等高级服务器端原子操作数据模型编辑</p>
+</li>
+</ul>
+</li>
+<li><p>安装</p>
+<p>在mac下可以直接用homebrew进行安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install redis</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/08/23/日常学习笔记(2018.8.23)/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

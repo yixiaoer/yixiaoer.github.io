@@ -15,18 +15,18 @@
     <meta name="keywords" content="日常学习,日常," />
   
 
-  <meta name="description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.20 《Go Web》 《Go Web》">
+  <meta name="description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.23 《Go Web》前六章复习及第七章;Docker安装及《Docker实践到入门》使用镜像部分;正则表达式 《Go Web》Web基础表单 表单是一个包含表单元素的区域,允许用户在表单中(eg.文本域、下拉列表、单选框、复选框etc.）输入信息的元素,使用表单标签(\)定义  在服务器端验证表单的输入  必填字段 用内置函数le">
 <meta name="keywords" content="日常学习,日常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每日学习笔记(2018.8.23)">
 <meta property="og:url" content="https://yixiaoer.github.io/2018/08/23/日常学习笔记(2018.8.23)/index.html">
 <meta property="og:site_name" content="Whatever.">
-<meta property="og:description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.20 《Go Web》 《Go Web》">
+<meta property="og:description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.23 《Go Web》前六章复习及第七章;Docker安装及《Docker实践到入门》使用镜像部分;正则表达式 《Go Web》Web基础表单 表单是一个包含表单元素的区域,允许用户在表单中(eg.文本域、下拉列表、单选框、复选框etc.）输入信息的元素,使用表单标签(\)定义  在服务器端验证表单的输入  必填字段 用内置函数le">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-23T15:54:27.000Z">
+<meta property="og:updated_time" content="2018-08-28T08:38:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每日学习笔记(2018.8.23)">
-<meta name="twitter:description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.20 《Go Web》 《Go Web》">
+<meta name="twitter:description" content="每日学习笔记Web学习相关内容大部分都只是所看的记录2018.8.23 《Go Web》前六章复习及第七章;Docker安装及《Docker实践到入门》使用镜像部分;正则表达式 《Go Web》Web基础表单 表单是一个包含表单元素的区域,允许用户在表单中(eg.文本域、下拉列表、单选框、复选框etc.）输入信息的元素,使用表单标签(\)定义  在服务器端验证表单的输入  必填字段 用内置函数le">
 
   
 
@@ -136,7 +136,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《Go-Web》"><span class="toc-text">《Go Web》</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《Go-Web》"><span class="toc-text">《Go Web》</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web基础"><span class="toc-text">Web基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单"><span class="toc-text">表单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问数据库"><span class="toc-text">访问数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session和数据存储"><span class="toc-text">session和数据存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本文件处理"><span class="toc-text">文本文件处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker"><span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正则表达式"><span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li></ol></li></ol>
   </div>
 
 
@@ -182,8 +182,376 @@
 
   <div class="article-content">
     
-      <p><strong>每日学习笔记</strong><br>Web学习相关内容<br>大部分都只是所看的记录<br><em>2018.8.20</em> 《Go Web》</p>
-<h1 id="《Go-Web》"><a href="#《Go-Web》" class="headerlink" title="《Go Web》"></a>《Go Web》</h1>
+      <p><strong>每日学习笔记</strong><br>Web学习相关内容<br>大部分都只是所看的记录<br><em>2018.8.23</em> 《Go Web》前六章复习及第七章;Docker安装及《Docker实践到入门》使用镜像部分;正则表达式</p>
+<h1 id="《Go-Web》"><a href="#《Go-Web》" class="headerlink" title="《Go Web》"></a>《Go Web》</h1><h2 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h2><h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><ul>
+<li><p>表单是一个包含表单元素的区域,允许用户在表单中(eg.文本域、下拉列表、单选框、复选框etc.）输入信息的元素,使用表单标签(\)定义</p>
+</li>
+<li><p>在服务器端验证表单的输入</p>
+<ul>
+<li><p><strong>必填字段</strong></p>
+<p>用内置函数<code>len</code>可以获取字符串的长度,以此来获取数据的长度</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(r.Form[<span class="string">"username"</span>][<span class="number">0</span>])==<span class="number">0</span>&#123;</span><br><span class="line">    <span class="comment">//为空的处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>r.Form</code>对不同类型的表单元素的留空有不同的处理,对于空文本框、空文本区域以及文件上传,元素的值为空值,而如果是未选中的复选框和单选按钮,则根本不会在r.Form中产生相应条目</p>
+<p>若用上面例子中的方式去获取数据时程序就会报错</p>
+<p>因此需要通过<code>r.Form.Get()</code>来获取值,因为如果字段不存在,通过该方式获取的是空值</p>
+<p>但是通过<code>r.Form.Get()</code>只能获取单个的值,若是map的值,必须通过上面的方式来获取</p>
+</li>
+<li><p><strong>数字</strong></p>
+<p>如果是判断正整数,那么先将表单获得的数据转化成int类型,然后进行处理</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getint,err:=strconv.Atoi(r.Form.Get(<span class="string">"age"</span>))</span><br><span class="line"><span class="keyword">if</span> err!=<span class="literal">nil</span>&#123;</span><br><span class="line">    <span class="comment">//数字转化出错了，那么可能就不是数字</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接下来就可以判断这个数字的大小范围了</span></span><br><span class="line"><span class="keyword">if</span> getint &gt;<span class="number">100</span> &#123;</span><br><span class="line">    <span class="comment">//太大了,大于100则如何如何</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还有一种方式就是正则匹配的方式</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> m, _ := regexp.MatchString(<span class="string">"^[0-9]+$"</span>, r.Form.Get(<span class="string">"age"</span>)); !m &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>中文</strong></p>
+<ul>
+<li><p>使用 <code>unicode</code> 包提供的 <code>func Is(rangeTab *RangeTable, r rune) bool</code> 来验证</p>
+</li>
+<li><p>使用正则方式来验证,这里使用最简单的正则方式,如下:</p>
+</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> m, _ := regexp.MatchString(<span class="string">"^\\p&#123;Han&#125;+$"</span>, r.Form.Get(<span class="string">"realname"</span>)); !m &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>英文</strong></p>
+<p>期望通过表单元素获取一个英文值可以很简单的通过正则验证数据：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> m, _ := regexp.MatchString(<span class="string">"^[a-zA-Z]+$"</span>, r.Form.Get(<span class="string">"engname"</span>)); !m &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>电子邮箱地址</strong></p>
+<p>想知道用户输入的一个Email地址是否正确,可通过如下这个方式验证：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> m, _ := regexp.MatchString(<span class="string">`^([\w\.\_]&#123;2,10&#125;)@(\w&#123;1,&#125;).([a-z]&#123;2,4&#125;)$`</span>, r.Form.Get(<span class="string">"email"</span>)); !m &#123;</span><br><span class="line">    fmt.Println(<span class="string">"no"</span>)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    fmt.Println(<span class="string">"yes"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>手机号码</strong></p>
+<p>想要判断用户输入的手机号码是否正确,通过正则也可以验证：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> m, _ := regexp.MatchString(<span class="string">`^(1[3|4|5|8][0-9]\d&#123;4,8&#125;)$`</span>, r.Form.Get(<span class="string">"mobile"</span>)); !m &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>下拉菜单</strong></p>
+<p>想要判断表单里面<code>&lt;select&gt;</code>元素生成的下拉菜单中是否有被选中的项目</p>
+<p>判断这个值是否是预设的值</p>
+<p>select可能是这样的一些元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"fruit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"apple"</span>&gt;</span>apple<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"pear"</span>&gt;</span>pear<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"banane"</span>&gt;</span>banane<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以这样来验证</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">slice:=[]<span class="keyword">string</span>&#123;<span class="string">"apple"</span>,<span class="string">"pear"</span>,<span class="string">"banane"</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _, v := <span class="keyword">range</span> slice &#123;</span><br><span class="line">    <span class="keyword">if</span> v == r.Form.Get(<span class="string">"fruit"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>单选按钮</strong></p>
+<p>判断我们获取的值是我们预设的值，而不是额外的值</p>
+<p>预设的值如下</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>男</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>女</span><br></pre></td></tr></table></figure>
+<p>也可以类似下拉菜单的做法,进行如下验证</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">slice:=[]<span class="keyword">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _, v := <span class="keyword">range</span> slice &#123;</span><br><span class="line">    <span class="keyword">if</span> v == r.Form.Get(<span class="string">"gender"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>时间和日期</strong></p>
+<p>想确定用户填写的日期或时间是否有效(eg.用户在日程表中安排8月份的第45天开会,或者提供未来的某个时间作为生日)</p>
+<p>Go里面提供了一个time的处理包,可以把用户的输入年月日转化成相应的时间,然后进行逻辑判断</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t := time.Date(<span class="number">2009</span>, time.November, <span class="number">10</span>, <span class="number">23</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, time.UTC)</span><br><span class="line">fmt.Printf(<span class="string">"Go launched at %s\n"</span>, t.Local())</span><br></pre></td></tr></table></figure>
+<p>获取time之后就可以进行很多时间函数的操作</p>
+</li>
+<li><p><strong>身份证号码</strong></p>
+<p>想验证表单输入的是否是身份证,通过正则也可以方便的验证</p>
+<p>身份证有15位和18位,两个都需要验证</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//验证15位身份证，15位的是全部数字</span></span><br><span class="line"><span class="keyword">if</span> m, _ := regexp.MatchString(<span class="string">`^(\d&#123;15&#125;)$`</span>, r.Form.Get(<span class="string">"usercard"</span>)); !m &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//验证18位身份证，18位前17位为数字，最后一位是校验位，可能为数字或字符X。</span></span><br><span class="line"><span class="keyword">if</span> m, _ := regexp.MatchString(<span class="string">`^(\d&#123;17&#125;)([0-9]|X)$`</span>, r.Form.Get(<span class="string">"usercard"</span>)); !m &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>预防跨站脚本</p>
+<ul>
+<li>现在的网站包含大量的动态内容以提高用户体验,所谓动态内容,就是根据用户环境和需要,Web应用程序能够输出相应的内容</li>
+<li>动态站点会受到一种名为””跨站脚本攻击”(Cross Site Scripting, XSS)的威胁,而静态站点则完全不受其影响</li>
+<li>攻击者通常会在有漏洞的程序中插入JavaScript、VBScript、 ActiveX或Flash以欺骗用户,一旦得手,可以盗取用户帐户信息、修改用户设置、盗取/污染cookie、植入恶意广告…</li>
+<li>对XSS最佳的防护应该结合以下两种方法<ul>
+<li>验证所有输入数据,有效检测攻击(即验证表单输入内容)</li>
+<li>对所有输出数据进行适当的处理,以防止任何已成功注入的脚本在浏览器端运行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>防止多次递交表单</p>
+<ul>
+<li><p>在表单中添加一个带有唯一值的隐藏字段,在验证表单时,先检查带有该唯一值的表单是否已经递交过了</p>
+<ul>
+<li>是则拒绝再次递交</li>
+<li>不是则处理表单进行逻辑处理</li>
+</ul>
+<p>举例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; name=&quot;interest&quot; value=&quot;football&quot;&gt;足球</span><br><span class="line">&lt;input type=&quot;checkbox&quot; name=&quot;interest&quot; value=&quot;basketball&quot;&gt;篮球</span><br><span class="line">&lt;input type=&quot;checkbox&quot; name=&quot;interest&quot; value=&quot;tennis&quot;&gt;网球    </span><br><span class="line">用户名:&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;</span><br><span class="line">密码:&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;</span><br><span class="line">&lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;&#123;&#123;.&#125;&#125;&quot;&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot; value=&quot;登陆&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>在模版里面增加了一个隐藏字段<code>token</code>,这个值通过MD5(时间戳)来获取唯一值,然后把这个值存储到服务器端(session来控制),以方便表单提交时比对判定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">func login(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">    fmt.Println(&quot;method:&quot;, r.Method) //获取请求的方法</span><br><span class="line">    if r.Method == &quot;GET&quot; &#123;</span><br><span class="line">        crutime := time.Now().Unix()</span><br><span class="line">        h := md5.New()</span><br><span class="line">        io.WriteString(h, strconv.FormatInt(crutime, 10))</span><br><span class="line">        token := fmt.Sprintf(&quot;%x&quot;, h.Sum(nil))</span><br><span class="line"></span><br><span class="line">        t, _ := template.ParseFiles(&quot;login.gtpl&quot;)</span><br><span class="line">        t.Execute(w, token)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        //请求的是登陆数据，那么执行登陆的逻辑判断</span><br><span class="line">        r.ParseForm()</span><br><span class="line">        token := r.Form.Get(&quot;token&quot;)</span><br><span class="line">        if token != &quot;&quot; &#123;</span><br><span class="line">            //验证token的合法性</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            //不存在token报错</span><br><span class="line">        &#125;</span><br><span class="line">        fmt.Println(&quot;username length:&quot;, len(r.Form[&quot;username&quot;][0]))</span><br><span class="line">        fmt.Println(&quot;username:&quot;, template.HTMLEscapeString(r.Form.Get(&quot;username&quot;))) //输出到服务器端</span><br><span class="line">        fmt.Println(&quot;password:&quot;, template.HTMLEscapeString(r.Form.Get(&quot;password&quot;)))</span><br><span class="line">        template.HTMLEscape(w, []byte(r.Form.Get(&quot;username&quot;))) //输出到客户端</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果是采用了Ajax模式递交表单的话，当表单递交后，通过javascript来禁用表单的递交按钮</p>
+</li>
+</ul>
+</li>
+<li><p>处理文件上传</p>
+<ul>
+<li>要使表单能够上传文件,首先要添加form的<code>enctype</code>属性<ul>
+<li>application/x-www-form-urlencoded   表示在发送前编码所有字符(默认)</li>
+<li>multipart/form-data         不对字符编码,在使用包含文件上传控件的表单时,必须使用该值</li>
+<li>text/plain      空格转换为 “+” 加号,但不对特殊字符编码</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h2><p>mongdb</p>
+<h2 id="session和数据存储"><a href="#session和数据存储" class="headerlink" title="session和数据存储"></a>session和数据存储</h2><ul>
+<li><p>cookie机制</p>
+<ul>
+<li>一种客户端机制,把用户数据保存在客户端</li>
+<li>在本地计算机保存一些用户操作的历史信息(包括登录信息),并在用户再次访问该站点时浏览器通过HTTP协议将本地cookie内容发送给服务器,从而完成验证或继续上一步操作</li>
+<li>由浏览器维持的,存储在客户端的一小段文本信息,伴随着用户请求和页面在Web服务器和浏览器之间传递</li>
+<li>有时间限制<ul>
+<li>会话cookie<ul>
+<li>不保存在硬盘上而是保存在内存里</li>
+<li>不设置过期时间,这个cookie生命周期为从创建到浏览器关闭止,只要关闭浏览器窗口,cookie就消失了</li>
+</ul>
+</li>
+<li>持久cookie<ul>
+<li>保存在硬盘上</li>
+<li>设置了过期时间(setMaxAge(60<em>60</em>24)),浏览器会把cookie保存到硬盘上,关闭后再次打开浏览器这些cookie依然有效直到超过设定的过期</li>
+<li>存储在硬盘上的cookie可以在不同的浏览器进程间共享(eg.两个IE窗口)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>session机制</p>
+<ul>
+<li>中文常译为会话,本义是有始有终的一系列动作/消息(eg.打电话是从拿起电话拨号到挂断电话这中间的一系列过程可以称之为一个session),然而当session一词与网络协议相关联时,又往往隐含了“面向连接”和/或“保持状态”这样两个含义;session在Web开发环境下的语义又有了新的扩展,指一类用来在客户端与服务器端之间保持状态的解决方案;有时也用来指这种解决方案的存储结构</li>
+<li>一种服务器端的机制,服务器使用一种类似于散列表的结构(也可能就是使用散列表)来保存信息,每一个网站访客都会被分配给一个唯一的标志符,即sessionID,服务器用它来标识session,它由服务器负责产生,保证随机性与唯一性,相当于一个随机密钥,避免在握手或传输中暴露用户真实密码</li>
+<li><p>程序需某个客户端的请求创建一个session的时,服务器首先检查这个客户端的请求里是否包含了一个session标识(session id),如果已经包含一个session id则说明以前已经为此客户创建过session,服务器就按照session id把这个session检索出来使用(如果检索不到,可能会新建一个.这种情况可能出现在服务端已经删除了该用户对应的session对象,但用户人为地在请求的URL后面附加上一个JSESSION的参数)。如果客户请求不包含session id,则为此客户创建一个session并且同时生成一个与此session相关联的session id,这个session id将在本次响应中返回给客户端保存</p>
+</li>
+<li><p>session ID的存放形式</p>
+<ul>
+<li>保存在客户端的cookies里<ul>
+<li>通过设置Set-cookie头就可以将session的标识符传送到客户端</li>
+<li>客户端此后的每一次请求都会带上这个标识符</li>
+<li>一般包含session信息的cookie会将失效时间设置为0(会话cookie),即浏览器进程有效时间,至于浏览器怎么处理这个0每个浏览器都有自己的方案,但差别都不会太大(一般体现在新建浏览器窗口的时候)</li>
+</ul>
+</li>
+<li>经过url传递<ul>
+<li>即URL重写,在返回给用户的页面里的所有的URL后面追加session标识符</li>
+<li>用户在收到响应之后,无论点击响应页面里的哪个链接或提交表单,都会自动带上session标识符,从而就实现了会话的保持</li>
+<li>虽然这种做法比较麻烦,但客户端禁用了cookie的话,此方案将是首选</li>
+</ul>
+</li>
+<li>将Session保存到数据库里<ul>
+<li>这更安全</li>
+<li>效率方面会有所下降</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>session管理<ul>
+<li>全局session管理器</li>
+<li>保证sessionid 的全局唯一性</li>
+<li>为每个客户关联一个session</li>
+<li>session 的存储(可以存储到内存、文件、数据库等)</li>
+<li>session 过期处理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="文本文件处理"><a href="#文本文件处理" class="headerlink" title="文本文件处理"></a>文本文件处理</h2><ul>
+<li>XML处理</li>
+<li>JSON处理</li>
+<li>正则处理</li>
+<li>模版处理</li>
+<li>文件操作</li>
+<li>字符串处理</li>
+</ul>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ul>
+<li><p>Docker 是什么</p>
+<ul>
+<li>一个开源软件项目，让应用程序布署在软件容器下的工作可以自动化进行</li>
+<li>容器是完全使用<a href="https://zh.wikipedia.org/wiki/%E6%B2%99%E7%9B%92_(%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8" target="_blank" rel="noopener">沙箱机制</a>)，相互之间不会有任何接口,且容器性能开销极低</li>
+<li>与传统虚拟机比较<ul>
+<li>传统虚拟机技术是虚拟出一套硬件后,在其上运行一个完整操作系统,在该系统上再运行所需应用进程</li>
+<li>Docker容器内的应用进程直接运行于宿主的内核,容器内没有自己的内核,也没有进行硬件虚拟</li>
+</ul>
+</li>
+<li>Docker 架构<ul>
+<li>使用客户端-服务器 (C/S) 架构模式,使用远程API来管理和创建Docker容器</li>
+<li>Docker 容器通过 Docker 镜像来创建</li>
+<li>容器与镜像的关系类似于面向对象编程中的对象与类,镜像是静态的定义，容器是镜像运行时的实体</li>
+</ul>
+</li>
+<li>Docker 的三个基本概念<ul>
+<li>镜像（<code>Image</code>）<ul>
+<li>用于创建 Docker 容器的模版</li>
+<li>Docker 运行容器前需要本地存在对应的镜像,如果本地不存在该镜像,Docker 会从镜像仓库下载该镜像</li>
+<li>Docker 镜像是一个特殊的文件系统,除了提供容器运行时所需的程序、库、资源、配置等文件外,还包含了一些为运行时准备的一些配置参数(如匿名卷、环境变量、用户等),它不包含任何动态数据,其内容在构建之后也不会被改变</li>
+<li>镜像构建时,会一层层构建,前一层是后一层的基础镜像只是一个虚拟的概念,其实际体现并非由一个文件组成,而是由一组文件系统组成,或者说,由多层文件系统联合组成</li>
+<li>每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层(eg.删除前一层文件的操作,实际不是真的删除前一层的文件,而是仅在当前层标记为该文件已删除。在最终容器运行的时候,虽然不会看到这个文件,但是实际上该文件会一直跟随镜像。因此,在构建镜像的时候,需要额外小心,每一层尽量只包含该层需要添加的东西,任何额外的东西应该在该层构建结束前清理掉</li>
+<li>也用之前构建好的镜像作为基础层,然后进一步添加新的层,以定制自己所需的内容,构建新的镜像</li>
+</ul>
+</li>
+<li>容器（<code>Container</code>）<ul>
+<li>独立运行的一个或一组应用</li>
+<li>容器可以被创建、启动、停止、删除、暂停等</li>
+<li>容器的实质是进程,但与直接在宿主执行的进程不同,容器进程运行于属于自己的独立的命名空间。因此容器可以拥有自己的 <code>root</code> 文件系统、自己的网络配置、自己的进程空间,甚至自己的用户 ID 空间</li>
+<li>容器内的进程是运行在一个隔离的环境里,使用起来,就好像是在一个独立于宿主的系统下操作一样</li>
+<li>容器和镜像一样也是使用分层储存,每一个容器运行时,是以镜像为基础层,在其上创建一个当前容器的存储层,称这个为容器运行时读写而准备的存储层为<strong>容器存储层</strong><ul>
+<li>容器存储层的生存周期和容器一样,容器消亡时,容器存储层也随之消亡。因此,任何保存于容器存储层的信息都会随容器删除而丢失</li>
+<li>一般而言,容器不应该向其存储层内写入任何数据,容器存储层要保持无状态化,所有的文件写入操作,都应该使用 <a href="https://yeasy.gitbooks.io/docker_practice/content/data_management/volume.html" target="_blank" rel="noopener">数据卷(Volume)</a>、或者绑定宿主目录,在这些位置的读写会跳过容器存储层,直接对宿主（或网络存储）发生读写,其性能和稳定性更高</li>
+<li>数据卷的生存周期独立于容器,容器消亡，数据卷不会消亡。因此,使用数据卷后,容器删除或者重新运行之后,数据却不会丢失</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>仓库（<code>Repository</code>）<ul>
+<li>用来保存镜像,可以理解为代码控制中的代码仓库</li>
+<li>镜像构建完成后,可以很容易的在当前宿主机上运行,但若需要在其它服务器上使用这个镜像,则需要一个集中的存储、分发镜像的服务,<a href="https://yeasy.gitbooks.io/docker_practice/content/repository/registry.html" target="_blank" rel="noopener">Docker Registry</a> 就是这样的服务</li>
+<li>一个 Docker Registry 中可以包含多个仓库(Repository);每个仓库可以包含多个标签(Tag);每个标签对应一个镜像</li>
+<li>通常,一个仓库会包含同一个软件不同版本的镜像,而标签就常用于对应该软件的各个版本,可以通过 <code>&lt;仓库名&gt;:&lt;标签&gt;</code> 的格式来指定具体是这个软件哪个版本的镜像;若如果不给出标签,将以 <code>latest</code> 作为默认标签</li>
+<li>仓库名经常以 <em>两段式路径</em> 形式出现,比如 <code>name/nginx-proxy</code>,前者往往意味着 Docker Registry 多用户环境下的用户名,后者则往往是对应的软件名</li>
+<li>最常使用的 Registry 公开服务是官方的 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>,这也是默认的 Registry,除此以外,还有 <a href="https://coreos.com/" target="_blank" rel="noopener">CoreOS</a> 的 <a href="https://quay.io/repository/" target="_blank" rel="noopener">Quay.io</a>,CoreOS 相关的镜像存储在这里;Google 的 <a href="https://cloud.google.com/container-registry/" target="_blank" rel="noopener">Google Container Registry</a>,<a href="http://kubernetes.io/" target="_blank" rel="noopener">Kubernetes</a> 的镜像使用的就是这个服务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Docker的安装与镜像加速</p>
+<ul>
+<li><p>安装</p>
+<ul>
+<li><p>可以利用homebrew进行安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> brew cask install docker手动下载安装</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手动下载</p>
+<p>请点击以下链接下载 <a href="https://download.docker.com/mac/stable/Docker.dmg" target="_blank" rel="noopener">Stable</a> 或 <a href="https://download.docker.com/mac/edge/Docker.dmg" target="_blank" rel="noopener">Edge</a> 版本的 Docker for Mac</p>
+<p>之后双击下载的 <code>.dmg</code> 文件，然后将鲸鱼图标拖拽到 <code>Application</code> 文件夹即可(其间需要输入用户密码)</p>
+</li>
+</ul>
+</li>
+<li><p>镜像加速</p>
+<ul>
+<li><p>在任务栏点击 Docker for mac 应用图标 -&gt; Perferences… -&gt; Daemon -&gt; Registry mirrors</p>
+</li>
+<li><p>在列表中填写加速器地址</p>
+<ul>
+<li>Docker 官方提供<code>https://registry.docker-cn.com</code></li>
+<li>七牛云 <code>https://reg-mirror.qiniu.com/</code></li>
+<li>网易<code>http://hub-mirror.c.163.com</code></li>
+</ul>
+</li>
+<li><p>之后可在终端通过</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br></pre></td></tr></table></figure>
+<p>查看镜像是否配置成功</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用镜像</p>
+<ul>
+<li><p>获取镜像</p>
+<p>从 Docker 镜像仓库获取镜像的命令是 <code>docker pull</code>。其命令格式为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>具体的选项可以通过 <code>docker pull --help</code> 命令看到</li>
+<li>镜像名称的格式<ul>
+<li>Docker 镜像仓库地址：地址的格式一般是 <code>&lt;域名/IP&gt;[:端口号]</code>。默认地址是 Docker Hub</li>
+<li>仓库名：如之前所说，这里的仓库名是两段式名称，即 <code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于 Docker Hub，如果不给出用户名，则默认为 <code>library</code>，也就是官方镜像。</li>
+</ul>
+</li>
+</ul>
+<p>有了镜像后，我们就能够以这个镜像为基础启动并运行一个容器,运行容器的命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run</span><br></pre></td></tr></table></figure>
+<p>最后通过<code>exit</code>退出这个容器</p>
+</li>
+<li><p>列出镜像</p>
+</li>
+<li><p>删除本地镜像</p>
+</li>
+<li><p>利用commit理解镜像构成</p>
+</li>
+<li><p>Dockerfile指令</p>
+</li>
+<li><p>Dockerfile多阶段构建</p>
+</li>
+<li><p>其他制作镜像的方式</p>
+</li>
+<li><p>实现原理</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li><p>正则表达式(Regular Expression)是一种文本模式,包括普通字符(例如，a 到 z 之间的字母)和特殊字符(称为”元字符”),是记录文本规则的代码</p>
+</li>
+<li><p>正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串</p>
+</li>
+<li><p>通过使用正则表达式,可以：</p>
+<ul>
+<li><p>测试字符串内的模式</p>
+<p>可以测试输入字符串,以查看字符串内是否出现电话号码模式或信用卡号码模式,这称为数据验证</p>
+</li>
+<li><p>替换文本<br>可以使用正则表达式来识别文档中的特定文本,完全删除该文本或者用其他文本替换它</p>
+</li>
+<li><p>基于模式匹配从字符串中提取子字符串<br>可以查找文档内或输入域内特定的文本</p>
+</li>
+</ul>
+</li>
+<li><p>语法</p>
+<ul>
+<li><p>普通字符</p>
+<ul>
+<li><p>包括<em>没有显式指定为元字符的</em>所有<strong>可打印</strong>和<strong>不可打印</strong>字符,包括所有大写和小写字母、所有数字、所有标点符号和一些其他符号普通字符</p>
+</li>
+<li><p>包含</p>
+<ul>
+<li><p>非打印字符</p>
+<p>| 字符 | 描述                                                         |<br>| —- | ———————————————————— |<br>| \cx  | 匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。 |<br>| \f   | 匹配一个换页符。等价于 \x0c 和 \cL。                         |<br>| \n   | 匹配一个换行符。等价于 \x0a 和 \cJ。                         |<br>| \r   | 匹配一个回车符。等价于 \x0d 和 \cM。                         |<br>| \s   | 匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。注意 Unicode 正则表达式会匹配全角空格符。 |<br>| \S   | 匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。                  |<br>| \t   | 匹配一个制表符。等价于 \x09 和 \cI。                         |<br>| \v   | 匹配一个垂直制表符。等价于 \x0b 和 \cK。                     |</p>
+</li>
+<li><p>特殊字符</p>
+<p>一些有特殊含义的字符</p>
+<p>许多元字符要求在试图匹配它们时特别对待</p>
+<p>若要匹配这些特殊字符，必须首先使字符”转义”,即将反斜杠字符<code>\</code> 放在它们前面</p>
+<p>| 特别字符 | 描述                                                         |<br>| ——– | ———————————————————— |<br>| $        | 匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 \$。 |<br>| ( )      | 标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。 |<br>| <em>        | 匹配前面的子表达式零次或多次。要匹配 </em> 字符，请使用 *。     |<br>| +        | 匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。     |<br>| .        | 匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 . 。    |<br>| [        | 标记一个中括号表达式的开始。要匹配 [，请使用 [。            |<br>| ?        | 匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 \?。 |<br>| \        | 将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\‘ 匹配 “\”，而 ‘(‘ 则匹配 “(“。 |<br>| ^        | 匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字符集合。要匹配 ^ 字符本身，请使用 \^。 |<br>| {        | 标记限定符表达式的开始。要匹配 {，请使用 {。                |<br>| |       | 指明两项之间的一个选择。要匹配 |，请使用 |。               |</p>
+</li>
+<li><p>限定符</p>
+<p>用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配,出现在范围表达式之后</p>
+<p>应用于整个范围表达式</p>
+<p>| 字符  | 描述                                                         |<br>| —– | ———————————————————— |<br>| <em>     | 匹配前面的子表达式零次或多次。例如，zo</em> 能匹配 “z” 以及 “zoo”。<em> 等价于{0,}。 |<br>| +     | 匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。 |<br>| ?     | 匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 、 “does” 中的 “does” 、 “doxy” 中的 “do” 。? 等价于 {0,1}。 |<br>| {n}   | n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。 |<br>| {n,}  | n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o</em>‘。 |<br>| {n,m} | m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。 |</p>
+</li>
+<li><p>定位符</p>
+<p>将正则表达式固定到行首或行尾</p>
+<p>创建出现在一个单词内、在一个单词的开头或者一个单词的结尾的正则表达式</p>
+<p>定位符用来描述字符串或单词的边界</p>
+<p>| 字符 | 描述                                                         |<br>| —- | ———————————————————— |<br>| ^    | 匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与 \n 或 \r 之后的位置匹配。 |<br>| $    | 匹配输入字符串结尾的位置。如果设置了 RegExp 对象的 Multiline 属性，$ 还会与 \n 或 \r 之前的位置匹配。 |<br>| \b   | 匹配一个字边界，即字与空格间的位置。                         |<br>| \B   | 非字边界匹配。                                               |</p>
+<p>不能将限定符与定位符一起使用。由于在紧靠换行或者字边界的前面或后面不能有一个以上位置，因此不允许诸如 ^* 之类的表达式。</p>
+<p>若要匹配一行文本开始处的文本，请在正则表达式的开始使用 ^ 字符。不要将 ^ 的这种用法与中括号表达式内的用法混淆。</p>
+<p>若要匹配一行文本的结束处的文本，请在正则表达式的结束处使用 $ 字符</p>
+</li>
+<li><p>选择</p>
+<p>用圆括号将所有选择项括起来，相邻的选择项之间用|分隔。但用圆括号会有一个副作用，使相关的匹配会被缓存，此时可用?:放在第一个选项前来消除这种副作用。</p>
+<p>其中 ?: 是非捕获元之一，还有两个非捕获元是 ?= 和 ?!，这两个还有更多的含义，前者为正向预查，在任何开始匹配圆括号内的正则表达式模式的位置来匹配搜索字符串，后者为负向预查，在任何开始不匹配该正则表达式模式的位置来匹配搜索字符串。</p>
+</li>
+<li><p>反向引用</p>
+<p>对一个正则表达式模式或部分模式两边添加圆括号将导致相关匹配存储到一个临时缓冲区中，所捕获的每个子匹配都按照在正则表达式模式中从左到右出现的顺序存储。缓冲区编号从 1 开始，最多可存储 99 个捕获的子表达式。每个缓冲区都可以使用 \n 访问，其中 n 为一个标识特定缓冲区的一位或两位十进制数。</p>
+<p>可以使用非捕获元字符 ?:、?= 或 ?! 来重写捕获，忽略对相关匹配的保存。</p>
+<p>反向引用的最简单的、最有用的应用之一，是提供查找文本中两个相同的相邻单词的匹配项的能力</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>元字符</p>
+<p>| 字符         | 描述                                                         |<br>| ———— | ———————————————————— |<br>| \            | 将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。例如，’n’ 匹配字符 “n”。’\n’ 匹配一个换行符。序列 ‘\‘ 匹配 “\” 而 “(“ 则匹配 “(“。 |<br>| ^            | 匹配输入字符串的开始位置。如果设置了 RegExp 对象的 Multiline 属性，^ 也匹配 ‘\n’ 或 ‘\r’ 之后的位置。 |<br>| $            | 匹配输入字符串的结束位置。如果设置了RegExp 对象的 Multiline 属性，$ 也匹配 ‘\n’ 或 ‘\r’ 之前的位置。 |<br>| <em>            | 匹配前面的子表达式零次或多次。例如，zo</em> 能匹配 “z” 以及 “zoo”。<em> 等价于{0,}。 |<br>| +            | 匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。 |<br>| ?            | 匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 或 “does” 。? 等价于 {0,1}。 |<br>| {n}          | n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。 |<br>| {n,}         | n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o</em>‘。 |<br>| {n,m}        | m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。 |<br>| ?            | 当该字符紧跟在任何一个其他限制符 (*, +, ?, {n}, {n,}, {n,m}) 后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串 “oooo”，’o+?’ 将匹配单个 “o”，而 ‘o+’ 将匹配所有 ‘o’。 |<br>| .            | 匹配除换行符（\n、\r）之外的任何单个字符。要匹配包括 ‘\n’ 在内的任何字符，请使用像”<strong>(.|\n)</strong>“的模式。 |<br>| (pattern)    | 匹配 pattern 并获取这一匹配。所获取的匹配可以从产生的 Matches 集合得到，在VBScript 中使用 SubMatches 集合，在JScript 中则使用 $0…$9 属性。要匹配圆括号字符，请使用 ‘(‘ 或 ‘)‘。 |<br>| (?:pattern)  | 匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用 “或” 字符 (|) 来组合一个模式的各个部分是很有用。例如， ‘industr(?:y|ies) 就是一个比 ‘industry|industries’ 更简略的表达式。 |<br>| (?=pattern)  | 正向肯定预查（look ahead positive assert），在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，”Windows(?=95|98|NT|2000)”能匹配”Windows2000”中的”Windows”，但不能匹配”Windows3.1”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。 |<br>| (?!pattern)  | 正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如”Windows(?!95|98|NT|2000)”能匹配”Windows3.1”中的”Windows”，但不能匹配”Windows2000”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。 |<br>| (?&lt;=pattern) | 反向(look behind)肯定预查，与正向肯定预查类似，只是方向相反。例如，”<code>(?&lt;=95|98|NT|2000)Windows</code>“能匹配”<code>2000Windows</code>“中的”<code>Windows</code>“，但不能匹配”<code>3.1Windows</code>“中的”<code>Windows</code>“。 |<br>| (?&lt;!pattern) | 反向否定预查，与正向否定预查类似，只是方向相反。例如”<code>(?&lt;!95|98|NT|2000)Windows</code>“能匹配”<code>3.1Windows</code>“中的”<code>Windows</code>“，但不能匹配”<code>2000Windows</code>“中的”<code>Windows</code>“。 |<br>| x|y         | 匹配 x 或 y。例如，’z|food’ 能匹配 “z” 或 “food”。’(z|f)ood’ 则匹配 “zood” 或 “food”。 |<br>| [xyz]        | 字符集合。匹配所包含的任意一个字符。例如， ‘[abc]’ 可以匹配 “plain” 中的 ‘a’。 |<br>| [^xyz]       | 负值字符集合。匹配未包含的任意字符。例如， ‘[^abc]’ 可以匹配 “plain” 中的’p’、’l’、’i’、’n’。 |<br>| [a-z]        | 字符范围。匹配指定范围内的任意字符。例如，’[a-z]’ 可以匹配 ‘a’ 到 ‘z’ 范围内的任意小写字母字符。 |<br>| [^a-z]       | 负值字符范围。匹配任何不在指定范围内的任意字符。例如，’[^a-z]’ 可以匹配任何不在 ‘a’ 到 ‘z’ 范围内的任意字符。 |<br>| \b           | 匹配一个单词边界，也就是指单词和空格间的位置。例如， ‘er\b’ 可以匹配”never” 中的 ‘er’，但不能匹配 “verb” 中的 ‘er’。 |<br>| \B           | 匹配非单词边界。’er\B’ 能匹配 “verb” 中的 ‘er’，但不能匹配 “never” 中的 ‘er’。 |<br>| \cx          | 匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。 |<br>| \d           | 匹配一个数字字符。等价于 [0-9]。                             |<br>| \D           | 匹配一个非数字字符。等价于 [^0-9]。                          |<br>| \f           | 匹配一个换页符。等价于 \x0c 和 \cL。                         |<br>| \n           | 匹配一个换行符。等价于 \x0a 和 \cJ。                         |<br>| \r           | 匹配一个回车符。等价于 \x0d 和 \cM。                         |<br>| \s           | 匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。 |<br>| \S           | 匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。                  |<br>| \t           | 匹配一个制表符。等价于 \x09 和 \cI。                         |<br>| \v           | 匹配一个垂直制表符。等价于 \x0b 和 \cK。                     |<br>| \w           | 匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’。               |<br>| \W           | 匹配非字母、数字、下划线。等价于 ‘[^A-Za-z0-9_]’。           |<br>| \xn          | 匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，’\x41’ 匹配 “A”。’\x041’ 则等价于 ‘\x04’ &amp; “1”。正则表达式中可以使用 ASCII 编码。 |<br>| \num         | 匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，’(.)\1’ 匹配两个连续的相同字符。 |<br>| \n           | 标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。 |<br>| \nm          | 标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。 |<br>| \nml         | 如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。 |<br>| \un          | 匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。例如， \u00A9 匹配版权符号 (?)。 |</p>
+</li>
+</ul>
+</li>
+<li><p>运算符优先级</p>
+<p>正则表达式从左到右进行计算，并遵循优先级顺序，这与算术表达式非常类似。</p>
+<p>相同优先级的从左到右进行运算，不同优先级的运算先高后低。下表从最高到最低说明了各种正则表达式运算符的优先级顺序：</p>
+<p>| 运算符                      | 描述                                                         |<br>| ————————— | ———————————————————— |<br>| \                           | 转义符                                                       |<br>| (), (?:), (?=), []          | 圆括号和方括号                                               |<br>| *, +, ?, {n}, {n,}, {n,m}   | 限定符                                                       |<br>| ^, $, \任何元字符、任何字符 | 定位点和序列（即：位置和顺序）                               |<br>| |                          | 替换，”或”操作 字符具有高于替换运算符的优先级，使得”m|food”匹配”m”或”food”。若要匹配”mood”或”food”，请使用括号创建子表达式，从而产生”(m|f)ood”。 |</p>
+</li>
+<li><p>匹配规则</p>
+</li>
+</ul>
+
     
   </div>
 
@@ -197,7 +565,7 @@
     <a class="show pull-left" href="/2018/08/22/日常学习笔记(2018.8.22)/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="hide pull-right" href="/">
+    <a class="show pull-right" href="/2018/08/24/日常学习笔记(2018.8.24)/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
